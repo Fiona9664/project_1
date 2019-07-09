@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <link rel="stylesheet" href="css/index.css?v=1" />
+    <script type="text/javascript" src="js/swiper.min.js" ></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+    <script type="text/javascript" src="js/index.js" ></script>
+    <title>三八节浇花</title>
+    
+</head>
+<body>
+	<!--浇花页-->
+	<div class="page0 page" style="display: ;">
+		<div class="topBox">
+			<!--大标题-->
+			<div class="titleBox titleBox0"><img src="img/title1.png"/></div>
+			<!--小标题-->
+			<div class="titleBox titleBox1">给小花浇水&nbsp;&nbsp;&nbsp;抽奖赢好礼</div>
+		</div>
+		<!--花-->
+		<div class="flowerBox">
+			<div class="swiper-container flower">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide" data-flower="1"><img src="img/f1.png" class="anim1"/></div>
+			        <div class="swiper-slide" data-flower="2"><img src="img/f2.png" class="anim1"/></div>
+			        <div class="swiper-slide" data-flower="3"><img src="img/f3.png" class="anim1"/></div>
+			    </div>
+			    <!-- 导航按钮 -->
+			    <div class="swiper-button-prev swiperBtn"></div>
+			    <div class="swiper-button-next swiperBtn" onclick="$('.handBox').fadeOut(200)"></div>
+			</div>
+			<div class="pen"><img src="img/pen.png"/></div>
+		</div>
+		<!--水滴-->
+		<div class="rainBox" id="rain"><img src="img/rain.png" /></div>
+		<!--小手引导-->
+		<div class="handBox"><img src="img/hand.png"/></div>
+		<!--规则按钮-->
+		<div class="ruleBox">
+			<div class="ruleBtn">游戏规则</div>
+			<span></span>
+		</div>
+		<!--按钮-->
+		<div class="btnBox">
+			<div class="btn btn0" style="display: flex;">
+				<button id="waterBtn" class="sameBtn water" data-water="0">浇水</button>
+				<button id="shareBtn" class="sameBtn">分享给好友浇水</button>
+			</div>
+			<button id="lotteryBtn" class="sameBtn lotteryColor">抽奖<span>(已浇水<a id="num">0</a>次)</span></button>
+			<p>当浇水达到3次时，即可参加抽奖</p>
+		</div>
+	</div>
+	<!--规则-->
+	<div class="rulePage" style="display: none;" id="rulePage">
+		<div style="position: relative;">
+			<div class="ruleContent">
+				<img src="img/close.png" class="closeBtn"/>
+				<div>
+					<h3>游戏规则</h3>
+					<p>1、凡365淘房用户均可参与活动</p>
+					<p>2、本人及好友浇水总次数达到3次，即可参与抽奖</p>
+					<p>3、本活动最终解释权归365淘房所有</p>
+				</div>
+				<div>
+					<h3>奖品领取规则</h3>
+					<p>奖品：火烈鸟礼盒、暖心杯围巾礼盒、硅胶电动洁面仪、唇釉礼盒、欧诗漫护手霜、精致手链等。</p>
+				</div>
+				<div>
+					<p>领奖地点：江苏省建大厦B座7楼平台中心编辑部</p>
+					<p>领奖地点：3月11日-3月13日</p>
+					<p>咨询电话：025-86516365</p>
+				</div>
+			</div>
+			<div class="bottomBox"></div>
+			<div class="trapezoid"></div>
+		</div>
+		
+	</div>
+	<!--抽奖页-->
+	<div class="page1 page" style="display:none ;">
+		<div class="topBox">
+			<!--大标题-->
+			<div class="titleBox titleBox0"><img src="img/title2.png"/></div>
+		</div>
+		<!--刮刮卡区域-->
+		<div class="lotteryBox">
+			<div class="img"><img src="img/img.png"/></div>
+			<div class="lottery_gua">
+				<div class="giftBox"><img src="img/gift0.png" /><span>火烈鸟礼盒</span></div>
+				<div class="thanks" style="display: none;">谢谢参与</div>
+				<canvas id="canvas"></canvas>
+			</div>
+		</div>
+		<!--奖品提示&领取地址-->
+		<div class="pointBox">
+			<p>奖品：火烈鸟礼盒、暖心杯围巾礼盒、硅胶电动洁面仪、唇釉礼盒、欧诗漫护手霜、精致手链等。</p>
+			<p>领奖地点：江苏省建大厦B座7楼平台中心编辑部</p>
+			<p>领奖地点：3月11日-3月13日</p>
+			<p>咨询电话：025-86516365</p>
+		</div>
+	</div>
+	<!--分享-->
+	<div class="shareBox rulePage" style="display: none;"  onclick="$(this).hide();">
+		<img src="img/share.png" />
+	</div>
+	<!--填写信息-->
+	<!--<div class="inforBox rulePage"  style="display:none;" >
+		<div class="formBox">
+			<div class="inputBox">
+				<span>姓名</span>
+				<label>
+					<input type="text" name="name" id="name" placeholder="请输入您的姓名"/>
+				</label>
+			</div>
+			<div class="inputBox">
+				<span>联系方式</span>
+				<label>
+					<input type="tel" name="tel" id="tel" placeholder="请输入您的手机号" maxlength="11"/>
+				</label>
+			</div>
+			<div class="sureBtn" id="sureBtn">确定</div>
+		</div>
+	</div>-->
+<script>    
+	var flowerId=1;
+  	var mySwiper = new Swiper ('.swiper-container', {
+	    // 前进后退按钮
+	    navigation: {
+	      nextEl: '.swiper-button-next',
+	      prevEl: '.swiper-button-prev',
+	    }
+	}) 
+	//主要是这部分
+	mySwiper.on('slideChangeTransitionEnd', function () {
+	 	flowerId = $('.swiper-slide-active').data("flower");
+	});
+	
+	//浇水
+	$(".water").click(function(){
+		$(".swiperBtn,.handBox").hide();
+		$(".flower").css('pointer-events','none');
+		if(flag==0){
+			$(".rainBox").addClass("rain_anim");
+			flag=1;
+			waterNum++;
+			animStop(waterNum);
+		}else{
+			alert("每人只有一次给自己的浇水的机会哦~");
+		}
+	})
+	//分享给好友
+	$("#shareBtn").click(function(){
+		alert("分享给好友");
+		window.location.replace("sharePage.html");
+		localStorage.setItem("flowerId",flowerId);
+	})
+//刮刮卡
+	function repost(){
+		if(!flag)return;
+		$.post("{php echo $this->createMobileUrl('repost')}",{flag:flag},function(json){},"JSON")
+	}
+	$(function() {
+	   	var modalHelper = function() {
+		   	var m = {scrollTop: 0, }
+		    m.open = function() {
+		        this.scrollTop = document.scrollingElement.scrollTop;
+		       	document.body.classList.add("bodyCls");
+		        document.body.style.top = -this.scrollTop + 'px';
+		    }
+		    m.close = function() {
+		        document.body.classList.remove("bodyCls");
+		        document.scrollingElement.scrollTop = this.scrollTop;
+		    }
+	       	return m;
+	    };
+   		var canvas = document.getElementById('canvas');
+		var ctx, startX, startY, prize, result_type, move = true, start = true;
+		var m = new modalHelper();
+	    initcanvas();
+    	function initcanvas() {
+		    canvas.width = document.body.clientWidth-20;
+		    canvas.height = document.body.clientHeight/5;
+		    ctx = canvas.getContext("2d");
+		    var lotText = new Image();
+		    lotText.src = 'img/lottery_mask.png';
+		    lotText.onload = function() {
+		 	    var lotTextW = lotText.width;
+		        var lotTextH = lotText.height;
+		        ctx.drawImage(lotText, 0, 0, lotTextW, lotTextH, 0, 0, canvas.width, canvas.height);
+		    }
+	    };
+		function lottery() {
+		  	// 这里是 Ajax 与后端交互
+		   //$.post("{php echo $this->createMobileUrl('lottery')}", {fid:fid}, function(msg) {
+		   //   prize = msg.message;
+		   //   result_type = msg.type;
+			//  flag = msg.flag;
+		   //}, "JSON");
+		}
+    	canvas.addEventListener("touchstart", function(e) {
+        	startX = e.changedTouches[0].pageX - $(".lottery_gua").offset().left;
+        	startY = e.changedTouches[0].pageY - $(".lottery_gua").offset().top;
+	       	if (start) {
+	        	lottery();
+	           	start = false;
+	        }
+   		});
+	   	canvas.addEventListener("touchmove", function(e) {
+	       	e.preventDefault();
+	       	var moveX = e.changedTouches[0].pageX - $(".lottery_gua").offset().left;
+	       	var moveY = e.changedTouches[0].pageY - $(".lottery_gua").offset().top;
+	       	ctx.beginPath();
+	       	ctx.globalCompositeOperation = "destination-out";
+	       	ctx.arc(moveX, moveY, 25, 0, Math.PI * 2);
+	       	ctx.fill();
+	       	ctx.closePath();
+	       	var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height),
+	        pixles = imgData.data,
+	        transPixs = 0;
+	       	for (var i = 0, j = pixles.length; i < j; i += 4) {
+	           	var a = pixles[i + 3];
+	           	if (a < 10) {
+	               	transPixs++;
+	           	}
+	        }
+	       	var percentage = transPixs / (pixles.length / 4); //计算透明像素在所有像素点中所占比例
+			if (percentage > 0.5) //当比例大于50%时，隐藏canvas
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+			}); 
+	});
+		//表单验证
+		$("#sureBtn").click(function(){
+			if (!$("#name").val()){
+              	alert("请填写你的姓名");return false;
+          	}
+			if(!/1\d{10}/.test($("#tel").val())){
+            	alert("请正确填写手机号码");return false;
+          	}
+		})
+</script>
+</body>
+</html>

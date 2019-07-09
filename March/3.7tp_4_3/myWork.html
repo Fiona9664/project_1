@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/weui.min.css" />
+	<link rel="stylesheet" href="css/iconfont.css?v=1">
+    <link rel="stylesheet" href="css/index.css?v=1" />
+	<script type="text/javascript" src="js/weui.min.js" ></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+    <script type="text/javascript" src="js/index.js?v=1" ></script>
+    <title>摄影投票活动</title>
+</head>
+<body>
+	<div class="page page3">
+		<!-- 已参加 有作品 -->
+		<div id="joinWorks">
+			<!--个人信息和作品描述-->
+			<div class="myInfor sameBox">
+				<p id="myName">张小明</p>
+				<p id="myTel">12245126458</p>
+				<div class="textDetail">
+					<span><a></a>作品描述</span>
+					<p>碧波荡漾，水天一色，在那一瞬间，画面仿佛都静止了，留下的只是老人那一个孤独的背影和轻微的呼吸声。</p>
+				</div>
+			</div>
+			<!--作品详情 --照片-->
+			<div class="worksDetail sameBox beforeBox paddingBottom" id="myPhoto">
+				<div class="rightBox" id="vote" style="display: none;">
+					<span class="allTicket"><i class="iconfont icon-paihang-shouye sameIcon barColor"></i><a class="voteNum">2,543</a></span>
+					<a class="sortColor_1 sameSort my_voteBt shareBtn" data-vote="0">去拉票</a>
+				</div>
+				<div class="rightBox" id="check" style="text-align: center;display: block;">正在审核中.....</div>
+				<div class="worksImg imgDetail">
+					<img src="img/img0.jpg"/>
+					<img src="img/img0.jpg"/>
+					<img src="img/img0.jpg"/>
+					<img src="img/img0.jpg"/>
+				</div>
+			</div>
+			<!--右侧悬浮按钮-->
+			<div class="rightBtn rightBtn_1">
+				<div id="goTopBtn" onclick="pageScroll();"><a><i class="iconfont changeICon1">&#xe62e;</i><br>置顶</a></div >
+			</div>
+			<!--作品详情 --视频-->
+			<div class="worksDetail sameBox beforeBox paddingBottom" id="myVideo"  style="display: none;">
+				<div class="rightBox">
+					<span class="allTicket"><i class="iconfont icon-paihang-shouye sameIcon barColor"></i><a class="tickets">2,543</a></span>
+					<a class="sortColor_1 sameSort my_voteBtn shareBtn" data-vote="1">去拉票</a>
+				</div>
+				<div class="worksImg">
+					<img src="img/stop.png" class="stopBtn"/>
+					<video poster="img/img0.jpg" id="video_1" class="video"></video>
+				</div>
+			</div>
+		</div>
+		<!-- 没参加 -->
+		<div id="noJoin" class="workStyle" style="display: none;" >
+			<p><img src="img/noJoin.png"/><br/>您还没有参加</p>
+			<a class="sameBtn joinBtn" >马上参加</a>
+		</div>
+		<!--已参加 作品被删除 --> 
+		<div id="deleteWorks" class="workStyle" style="display: none;" >
+			<p><img src="img/delete.png"/><br/>您的作品因不符合参赛要求已被删除，<br/>您可以重新参与</p>
+			<a class="sameBtn joinBtn" >马上参加</a>
+		</div>
+	</div>
+	<!--分享-->
+	<div class="shareDialog"  onclick="$(this).fadeOut(200);"><img src="img/share.png" /></div>
+	<!--底部导航栏-->
+	<div class="bottomBox sameBox">
+		<ul class="bar">
+			<li><i class="iconfont icon-zhuye sameIcon"></i><p>首页</p></li>
+			<li><i class="iconfont icon-huodong sameIcon"></i><p>活动介绍</p></li>
+			<li class="barColor"><i class="iconfont icon-wodedangxuan sameIcon"></i><p>我的作品</p></li>
+		</ul>
+	</div>
+<script>
+$(function(){
+	// 播放视频
+	$(".stopBtn").click(function(){
+		weui.alert("播放视频");
+	})
+})
+</script>
+</body>
+</html>

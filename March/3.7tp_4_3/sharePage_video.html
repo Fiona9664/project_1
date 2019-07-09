@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <link rel="stylesheet" href="css/weui.min.css" />
+	<link rel="stylesheet" href="css/iconfont.css?v=1">
+   <link rel="stylesheet" href="css/index.css" />
+   <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+   <script type="text/javascript" src="js/index.js?v=1" ></script>
+   <script type="text/javascript" src="js/code.js"></script>
+    <title>摄影投票活动</title>
+</head>
+<body>
+	<!-- 分享 视频-->
+	<div class="page page4" id="shareVideo">
+		<!--分享-->
+		<div class="myInfor sameBox">
+			<h3>张小明 参加了【摄影投票活动】，需要你的支持，赶紧给TA投票或拉票吧!</h3>
+			<div class="rightBox">
+				<span class="allTicket"><i class="iconfont icon-paihang-shouye sameIcon barColor"></i><a class="voteNum">2,543</a></span>
+			</div>
+			<div class="btnBox btnBox_1">
+				<a class="sameBtn giveBtn">给TA投票</a>
+				<a class="sameBtn shareBtn">帮TA拉票</a>
+				<a class="sameBtn joinBtn">我要参加</a>
+			</div>
+		</div>
+		<!--作品详情 --视频-->
+		<div class="worksDetail sameBox beforeBox">
+			<div class="textDetail">
+				<span><a></a>作品描述</span>
+				<p>碧波荡漾，水天一色，在那一瞬间，画面仿佛都静止了，留下的只是老人那一个孤独的背影和轻微的呼吸声。</p>
+			</div>
+			<div class="worksImg">
+				<img src="img/stop.png" class="stopBtn"/>
+				<video poster="../img/img0.jpg" id="video_1" class="video"></video>
+			</div>
+		</div>
+	</div>
+	<!-- 遮罩层 -->
+	<div class="mask" style="display: none;"></div>
+	<!-- 投票验证弹窗 -->
+	<div class="dialog dialog1" style="display:none ;">
+		<i class="iconfont closeBtn  icon-guanbi"></i>
+		<p>请输入验证码</p>
+		<form>
+			<input type="text" id="code_input" class="codeInput" value="" placeholder="请输入验证码"/>
+		</form>
+		<div class="codeBox">
+			<div id="codeBox"></div>
+			<!-- 刷新验证码内容按钮 -->
+			<div class="reBtn" id="reBtn">看不清，换一张</div>
+		</div>
+		<div id="codeSub" class="sameBtn codeSub">提交</div>
+		<div class="point">每天有<a id="voteTimes">3</a>次投票机会</div>
+	</div>
+	<!-- 投票成功 -->
+	<div class="dialog dialog2" style="display: none;">
+		<i class="iconfont closeBtn  icon-guanbi"></i>
+		<div class="voteStyle">
+			<i class="iconfont barColor icon-yes_fill sameIcon"></i>
+			<a id="timeClose">倒计时3s</a>
+		</div>
+	</div>
+	<!--分享-->
+	<div class="shareDialog"  onclick="$(this).fadeOut(200);"><img src="img/share.png" /></div>
+	<!--底部导航栏-->
+	<div class="bottomBox sameBox">
+		<ul class="bar">
+			<li class="barColor"><i class="iconfont icon-zhuye sameIcon"></i><p>首页</p></li>
+			<li><i class="iconfont icon-huodong sameIcon"></i><p>活动介绍</p></li>
+			<li><i class="iconfont icon-wodedangxuan sameIcon"></i><p>我的作品</p></li>
+		</ul>
+	</div>
+<script type="text/javascript" src="js/weui.min.js" ></script>
+<script>
+$(function(){
+	// 播放视频
+	$(".stopBtn").click(function(){
+		weui.alert("播放视频");
+	})
+	//投票弹窗
+	var verifyCode = new GVerify("codeBox");//验证码	;
+	$(".giveBtn").click(function(){
+		var _this= $(this);
+		showCode(verifyCode,_this,1);
+	})
+})
+</script>
+</body>
+</html>

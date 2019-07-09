@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/index.css?v=1.2" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/preload.js"></script>
+    <script src="js/index.js"></script>
+    <title>飞阅江苏</title>
+</head>
+<body>
+<!--加载-->
+<div class="preload">
+    <img src="img/logo.png"/>
+    <p class="pre_num"></p>
+</div>
+<!--首页-->
+<div class="wrapper" style="display: none;">
+    <!--头部标题-->
+    <div class="headBox">
+        <div class="logoBox"><img src="img/logo.png"/></div>
+        <div class="titleBox"><img src="img/title0.png"> </div>
+    </div>
+    <!--城市名称-->
+    <div id="cityName"><img src="img/title1.png"> </div>
+    <!--所有城市-->
+    <div id="cityBox" >
+        <ul class="cityImg sameUl">
+            <li><img src="img/img0.png"/><a>南京</a></li>
+            <li><img src="img/img1.png"/><a>连云港</a></li>
+            <li><img src="img/img2.png"/><a>淮安</a></li>
+            <li><img src="img/img3.png"/><a>常州</a></li>
+            <li><img src="img/img4.png"/><a>溧阳</a></li>
+            <li><img src="img/img5.png"/><a>盐城</a></li>
+            <li><img src="img/img6.png"/><a>镇江</a></li>
+            <li><img src="img/img7.png"/><a>泰州</a></li>
+            <li><img src="img/img8.png"/><a>宿迁</a></li>
+            <li><img src="img/img9.png"/><a>无锡</a></li>
+            <li><img src="img/img10.png"/><a>苏州</a></li>
+            <li><img src="img/img11.png"/><a>徐州</a></li>
+            <li><img src="img/img12.png"/><a>扬州</a></li>
+            <li><img src="img/img13.png"/><a>南通</a></li>
+        </ul>
+    </div>
+    <!--城市详情-->
+    <div id="cityDetail" style="display: none;">
+        <ul class="cityView sameUl">
+        </ul>
+    </div>
+    <!--左侧导航栏-->
+    <div class="barBox">
+        <div class="homeBtn sameBtn"><img src="img/icon3.png"/></div>
+        <div class="barBtn sameBtn"><img src="img/icon1.png"/></div>
+        <ul class="barUl">
+            <li >南京</li>
+            <li>连云港</li>
+            <li>淮安</li>
+            <li>常州</li>
+            <li>溧阳</li>
+            <li>盐城</li>
+            <li>镇江</li>
+            <li>泰州</li>
+            <li>宿迁</li>
+            <li>无锡</li>
+            <li>苏州</li>
+            <li>徐州</li>
+            <li>扬州</li>
+            <li>南通</li>
+        </ul>
+        <div class="upDown"><img src="img/icon2.png"/></div>
+    </div>
+</div>
+<script>
+         var flag=1;
+        //查看每个城市详情
+        $(".cityImg li").click(function(){
+            var cityNums = $(".cityImg li").index(this);
+            $(".barUl").show();
+            $(".upDown").css("background","rgba(110,81,57,.8)");
+            flag=1;
+            showCity(cityNums);
+        });
+        //左侧导航栏
+        $(".barBtn,.upDown").click(function(){
+            if(flag==1){
+                $(".upDown img").css("transform","rotate(180deg)");
+                // $(".upDown").css("background","rgba(110,81,57,1)");
+                $(".barBtn").animate({"border-bottom-right-radius":"8px"},100);
+                $(".upDown").hide();
+                flag=0;
+            }else{
+                $(".upDown img").css("transform","rotate(0deg)");
+                $(".upDown").css("background","rgba(110,81,57,.8)");
+                $(".barBtn").css("border-bottom-right-radius","0");
+                $(".upDown").show();
+                flag=1;
+            }
+            $(".barUl").slideToggle(200);
+        });
+        $(".barUl li").click(function () {
+            var cityNums = $(".barUl li").index(this);
+            $(".barUl li").css("color","#dfac81");
+            showCity(cityNums);
+        })
+        //返回主页
+        $(".homeBtn").click(function () {
+            $("#cityBox").show();
+            $("#cityDetail,.barBox").hide();
+            $("#cityName img").attr('src',"img/title1.png");
+            $(".barUl li").css("color","#dfac81");
+            $(".barBtn").css("border-bottom-right-radius","0");
+            $(".upDown").show();
+        })
+</script>
+</body>
+</html>

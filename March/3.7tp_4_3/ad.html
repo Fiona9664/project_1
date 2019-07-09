@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/index.css?v=1" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+    <title>摄影投票活动</title>
+</head>
+<body>
+	<!--引导页-->
+	<div class="page page0" >
+		<div class="topBtn">
+			<a id="timeGO"></a>
+			<a id="goTo">跳过</a>
+		</div>
+	</div>
+</body>
+<script>
+	var times=3,timeStop;//导航页倒计时
+	//引导页倒计时
+	function timeGo(timeNum){
+		clearInterval(timeStop);
+		timeStop = setInterval(function(){
+			if(timeNum>0){
+				timeNum--;
+				$("#timeGO").html("倒计时:"+timeNum+"s");
+			}else{
+				clearInterval(timeStop);
+				window.location.replace("index.html");
+			}
+		},1000);
+	}
+	$(function(){
+		// 导航页倒计时
+		$("#timeGO").html("倒计时" + times + "s");
+		timeGo(times);//倒计时
+		//跳过按钮
+		$("#goTo").click(function () {
+			window.location.replace("index.html");
+			clearInterval(timeStop);
+		})
+		//阻止微信下拉弹性效果
+		$("body").on("touchmove",function(ev){
+			ev.preventDefault();
+		})
+		//阻止微信下拉弹性效果
+		document.querySelector('body').addEventListener("touchmove",function(ev){
+			ev.preventDefault();
+		})
+		//iphone阻止微信
+		document.body.addEventListener('touchmove', function (e) {
+			e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+		}, {passive: false});
+	})
+
+</script>
+</html>

@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css?v=1.2">
+	<title>地球一小时 - 365淘房 </title>
+
+<script type="text/javascript">
+    	var design_width = 750;
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/design_width;
+                document.write('<meta name="viewport" content="width='+design_width+', minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width='+design_width+', target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width='+design_width+', user-scalable=no, target-densitydpi=device-dpi">');
+        }
+</script>
+
+
+</head>
+<body>
+        <!--音乐-->
+        <audio src="img/rmusic.mp3" id="Rmusic"></audio>
+        <audio src="img/xmusic.mp3" id="Xmusic"></audio>
+        <!--加载层-->
+		<div id="pageload">
+            <p class="loading_percent"></p>
+        </div>
+        <!--场景1 黑灯瞎火一小时-->
+        <div class="main1">
+            <div class="logo"><img src="img/logo.png"></div>
+            <div class="flexbox1">
+                <!--main1上box-->
+                <div class="main1_TopBox wow zoomIn" data-wow-duration="1s" data-wow-offset="100">
+                        <div class="wow rubberBand" data-wow-delay="1s" data-wow-duration="1s">
+                            <!--黑灯瞎火-->
+                            <div class="top_Text wow pulse" data-wow-iteration="infinite"></div>
+                        </div>
+
+                </div>
+                <!--爱做的事-->
+                <div class="bottom_Text wow zoomIn" data-wow-delay=".5s"></div>
+                <!--main1下box-->
+                <div class="main1_BottomBox wow bounceInUp" data-wow-delay=".3s">
+                    <!--按钮-->
+                    <a href="javascript:void(0);" class="main1_btn wow pulse" data-wow-iteration="infinite">
+                        <img src="img/button1.png" alt="" class="" >
+                    </a>
+                    <!--小手-->
+                    <div class="hand"></div>
+                    <p class="wow bounceInUp"  data-wow-delay=".8s">根据轮廓猜猜看</p>
+                </div>
+            </div>
+        </div>
+        <!--场景1 黑灯瞎火一小时 END-->
+
+
+
+        <!--场景2 猜他们在干什么-->
+        <div class="game">
+            <div class="flexbox">
+                <div class="q_topImg wow bounceInDown  q1" data-wow-delay="0.3s">
+                    <img src="" alt="">
+                </div>
+                <!--选项-->
+                <div class="lst">
+                    <ul class="J_lst"></ul>
+                </div>  
+                <!--选项 end-->
+            </div>
+        </div>
+        <!--场景2 END-->
+
+
+        <!--答对-->
+        <div class="rightPage">
+            <div class="rightCont">
+            	<!--星星闪烁-->
+                <div class="rightImg wow flipInX" data-wow-delay="0.3s">
+                	<img src="img/star1.png" alt="" class="wow pulse" data-wow-iteration="infinite" data-wow-duration="800ms">
+                	<img src="img/star1.png" alt="" class="wow pulse" data-wow-iteration="infinite" data-wow-duration="1100ms">
+                	<img src="img/star2.png" alt="" class="wow pulse" data-wow-iteration="infinite" data-wow-duration="1400ms">
+                </div>
+                <div class="rightImg wow flipInX" data-wow-delay="0.3s">
+                <!--分针旋转-->	
+					<img src="img/fenzhen.png" alt="" class="fenzhen">
+                </div>
+                <div class="rightImg wow flipInX" data-wow-delay="0.3s">
+                <!--心冒泡-->	
+					<div class="container">
+					    <div class="pao"></div>
+					</div>
+                </div>
+                <div class="rightImg wow flipInX" data-wow-delay="0.3s">
+                <!--音符-->	
+                    <div class="container" id="note">
+                        <div class="pao"></div>
+                    </div>
+                </div>
+                <div>
+                    <p class="rightTit"></p>
+                    <a href="javascript:void(0);" class="next"></a>
+                </div>
+            </div>
+        </div>
+        <!--答对 END-->
+        <!--答错-->
+        <div class="error">
+            <div class="errCont">
+                <!--猜错了-->
+                <div>
+                    <div class="cuo wow flipInX" data-wow-delay="0.3s"></div>
+                    <div class="cuoImg wow lightSpeedIn" data-wow-delay="0.5s">
+                    	<img src="img/eye.png" alt="" class="wow pulse" data-wow-iteration="infinite">
+                    </div>
+                </div>
+                <!--答题数-->
+                <div> 
+                    <p class="number">答对<span></span>题,还剩<span></span>题</p>
+                    <a href="javascript:void(0);" class="return"></a>
+                </div>
+            </div>
+        </div>
+        <!--答错 END-->
+
+		<!--lastPage-->
+		<div class="lastPage">
+            <div class="flexbox">
+                <div class="oneblock">
+    				<!--<img src="img/onehour2.png" alt="" class="wow bounceInLeft" data-wow-delay="0.3s" data-wow-duration=".6s"> -->
+    				<img src="img/life.png" alt="" class="wow bounceInLeft" data-wow-delay="0.45s" data-wow-duration=".55s">
+    				<img src="img/hour324.png" alt="" class="wow bounceInLeft" data-wow-delay="0.6s" data-wow-duration=".55s">
+    				<!--<img src="img/open60.png" alt="" class="wow bounceInLeft" data-wow-delay="0.75s" data-wow-duration=".55s">-->
+                </div>
+                <div class="twoblock">
+    				<img src="img/lastHand.png" alt="">
+                    <img src="img/ligth.png"/>
+    				<img src="img/house365.png" alt="">
+                </div>
+            </div>
+		</div>
+		<!--lastPage end-->
+
+
+
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/index.js?v=1"></script>
+<script type="text/javascript" src="js/inpMusic.js"></script>
+<script>
+		/*答题js*/
+            var player1=document.getElementById('Rmusic');
+            var player2=document.getElementById('Xmusic');
+		    var order=0,
+		    	right=0,    //答对数
+		    	allLen=4,   //关数
+		   		json=[
+				        {
+				            name:"看星星",
+				            all:["做「运动」","看星星","组团开黑"],
+                            src:"img/qimg1.png",
+				            tit:"看星星",
+				            rank:0
+				        },
+				        {
+				            name:"平板撑",
+				            all:["抓虫子","啪啪啪","平板撑"],
+                            src:"img/qimg2.png",
+				            tit:"平板撑",
+				            rank:1
+				        },
+				        {
+				            name:"烛光晚餐",
+				            all:["烛光晚餐","么么哒","咬耳朵"],
+                            src:"img/qimg3.png",
+				            tit:"烛光晚餐",
+				            rank:2
+				        },
+				        {
+				            name:"对月当歌",
+				            all:["对月当歌","一人饮酒醉","吃棒棒糖"],
+                            src:"img/qimg4.png",
+				            tit:"对月当歌",
+				            rank:3
+				        }
+
+		        ]
+		/*点击按钮切换图片*/
+    	$('.main1_btn').on('touchstart',function(){
+    		$('.main1_btn').find('img').attr('src','img/button2.png');
+    		$(".main1").fadeOut(500);
+    		$('.game').fadeIn(500);
+    		setTimeout(function(){ $(".J_lst li:nth-child(1)").animate({marginLeft: '0px',opacity:'1'}, 600)}, 300);
+	        setTimeout(function(){ $(".J_lst li:nth-child(2)").animate({marginLeft: '0px',opacity:'1'}, 600)}, 450);
+	        setTimeout(function(){ $(".J_lst li:nth-child(3)").animate({marginLeft: '0px',opacity:'1'}, 600)}, 600);
+	        game(order);
+
+    	});
+
+    	/**game**/
+    	function game(n){
+    
+    		$("ul.J_lst").empty();
+    		/**声明**/
+    		var now=json[n],len=now.name,src=now.src;
+            /**遍历问题选项追加到ul**/
+            $('div.q_topImg img').attr('src',src);
+            for(var i=0,l=now.all.length;i<l;i++){
+	            var li=$("<li><span>"+now.all[i]+"</span></li>");
+	            $("ul.J_lst").append(li);
+       		};
+    		$('ul.J_lst').off("touchstart").on('touchstart','li',function(){
+    			if( $(this).text() == now.name){//显示正确页面
+    				right++;
+                    player1.play();
+    				$('p.rightTit').text('‘'+now.name+'’'); /*name*/
+    				$("div.game").fadeOut(500);
+    				$('div.rightPage').fadeIn(1000);
+    				$('div.rightImg').css('display','none');
+    				$('div.rightImg').eq(order).css('display','block');
+    			}else{
+                    player2.play();
+    				$("div.game").fadeOut(500);
+    				$('div.error').fadeIn(1000);
+    				$('p.number span:nth-child(1)').text(right); /*right*/
+    				$('p.number span:nth-child(2)').text(allLen-right); /*剩余*/
+    			}
+
+    		})
+    	};
+    	/**next**/
+    	$('a.next').on('touchstart',function(){
+    			order++;
+    			if(order<allLen && order!=3){// 0,1,2
+    				game(order);
+	    			$("div.rightPage").fadeOut(500);
+	    			$('div.game').fadeIn(1000);
+		    		setTimeout(function(){ $(".J_lst li:nth-child(1)").animate({marginLeft: '0px',opacity:'1'},600)}, 300);
+			        setTimeout(function(){ $(".J_lst li:nth-child(2)").animate({marginLeft: '0px',opacity:'1'},600)}, 450);
+			        setTimeout(function(){ $(".J_lst li:nth-child(3)").animate({marginLeft: '0px',opacity:'1'},600)}, 600);
+    			}else if(order === 3){//3
+    				game(order);
+	    			$("div.rightPage").fadeOut(500);
+	    			$('div.game').fadeIn(1000);
+	    			setTimeout(function(){ $('a.next').css('backgroundImage','url(img/adopt.png)')}, 2000);
+		    		setTimeout(function(){ $(".J_lst li:nth-child(1)").animate({marginLeft: '0px',opacity:'1'},600)}, 300);
+			        setTimeout(function(){ $(".J_lst li:nth-child(2)").animate({marginLeft: '0px',opacity:'1'},600)}, 450);
+			        setTimeout(function(){ $(".J_lst li:nth-child(3)").animate({marginLeft: '0px',opacity:'1'},600)}, 600);
+    			}
+    			else{//>3
+    				$("div.rightPage").fadeOut(500);
+    				$('div.lastPage').fadeIn(1000);
+    			}
+    			
+    	});
+    	/**return**/
+    	$('a.return').on('touchstart',function(){
+                player2.pause();
+    			game(order);
+    			$("div.error").fadeOut(500);
+    			$('div.game').fadeIn(1000);
+	    		setTimeout(function(){ $(".J_lst li:nth-child(1)").animate({marginLeft: '0px',opacity:'1'},600)},300);
+			    setTimeout(function(){ $(".J_lst li:nth-child(2)").animate({marginLeft: '0px',opacity:'1'},600)},450);
+			    setTimeout(function(){ $(".J_lst li:nth-child(3)").animate({marginLeft: '0px',opacity:'1'},600)},600);
+    	});
+
+</script>
+<script type="text/javascript">
+    $(function(){
+        paopao();
+    });
+    //需要的参数
+    var pp = {
+        pl : 0,    //生成的paopao随机的居左的位置
+        step :4000 //步数
+    };
+    function paopao(){
+        //添加元素
+        var html = '<div class="paopao" style="left: '+ pp.pl + 'px;"></div>';
+        $(".pao").append(html);
+        pp.pl = Math.round(Math.random()*100/2);  //随机位置
+
+        //执行动画
+        $(".paopao").each(function () {
+
+            if($(this).index()%2 == 0){
+                pp.step = 400;
+            }else if($(this).index()%3 == 0){
+                pp.step = 400;
+            }else{
+                pp.step = 400;
+            }
+
+            if (!$(this).is(":animated")) {
+                $(this).animate({            //运动
+                    top: "-300px",
+                    width: "52px",
+                    opacity: "0"
+                }, (1000-pp.step)*3,
+                function () {
+                    $(this).remove();        //清除元素
+                })
+            }
+        });
+        //定时器
+        setTimeout(paopao,pp.step);
+    }
+
+</script>
+
+</body>
+</html>

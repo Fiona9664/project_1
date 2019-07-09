@@ -1,0 +1,220 @@
+*{margin: 0;padding: 0;-webkit-tap-highlight-color: transparent;list-style: none;box-sizing: border-box;outline: none;text-decoration: none; -webkit-appearance: none;}
+i,em{ font-style: normal;}
+input,textarea,button,select{cursor: pointer; border: none;background: none;outline: none;-webkit-appearance: none;resize: none;-webkit-user-select: text!important;user-select: text!important;font-size: .95em;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{font-size: .9em;color: #878787;}
+input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder{opacity: 0;}
+html, body{width: 100%;height:100%;background-color: #fff;font-size: .95em;}
+a{color: inherit;}
+
+/*公共样式*/
+.page{width: 100%;height:100%;}
+.sameBox{width: 100%;background: #fff;}
+.mask,.shareDialog{width: 100%;height: 100%;background: rgba(0,0,0,.8);position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 100;display: none;}
+.beforeBox:before{content: '';width: 100%;height: 7px;background:#ebebeb;display: block;}
+.paddingBottom{padding-bottom: 25%}
+.worksDetail{position:relative;}
+.worksDetail .rightBox .allTicket img{width: 40%}
+.rightBtn_1{display: none;}
+.sameIcon{font-size: 2em;}
+/*引导页*/
+.page0{background:url(../img/bg.jpg)no-repeat;background-size: 100% 100%;}
+.topBtn{position:absolute ;top: 3%;right: 1%;font-size: .9em;width: 40%;white-space: nowrap;display: flex;justify-content: space-between;}
+.topBtn a{background: rgb(215,215,215);padding: 3% 5%;letter-spacing: 2px;text-align: center;}
+#timeGO{width: 90px;}
+/*首页*/
+/*搜索*/
+.searchBox{padding:2% 0; background: rgba(235,235,235,.8);position: fixed;top: 0;left: 0;right: 0;z-index: 100;}
+.input_search{width:95%;background: #fff;border-radius: 5px;margin: 0 auto;padding: 1%;}
+.input_search label{width: 100%;}
+.input_search label input{width: 90%;padding: 1%;}
+.dialogBox{width: 100%;height: 100%;background: rgba(0,0,0,.7);position: fixed;top: 0;right: 0;left: 0;bottom: 0;z-index: 100;}
+.anim1{animation: bg1 .5s linear 1;animation-fill-mode: forwards;}
+@keyframes bg1{
+    0%{background:rgba(235,235,235,.8);}
+    100%{background:#fff;}
+}
+.anim2{animation: bg2 2s linear 1;animation-fill-mode: forwards;}
+@keyframes bg2{
+    0%{background:#fff;}
+    100%{background:rgba(235,235,235,1);}
+}
+/*轮播图片*/
+.imgBox{cursor: pointer;}
+.imgBox img{width: 100%;}
+/*修改swiper样式*/
+.swiper-pagination-bullet{background:#f0f0f0;opacity: 1;}
+.swiper-pagination-bullet-active{background: #a1d481;width: 16px;height: 7px;border-radius: 2em;}
+/*活动人数数据*/
+.peopleBox{display: flex;justify-content: space-between;text-align: center;flex-wrap: wrap;background: #fff;padding: 2% 0;border-bottom: 1px solid #e6e6e6;}
+.numBox{width: 33%;border-right: 1px solid #e6e6e6;color: #696969;line-height: 1.5;}
+.numBox:last-child{border: none;}
+.numBox p:nth-child(1) img{width: 25%;pointer-events: none;}
+/*截止日期*/
+.overTime p{width: 95%;margin: 0 auto;padding: 3.5% 0;text-align: center;letter-spacing: 1px;white-space: nowrap;}
+.overTime p span{display:inline-block;background: #a1d481;border-radius: 5px;width: 28px;height: 23px;line-height: 23px; text-align: center;color: #fff;margin:auto 3px;}
+/*作品展示*/
+.worksBox{margin-bottom: 20%;}
+.titleBox{align-items: center;margin: 0 auto;}
+.titleBox>div{width: 100%;margin: 0 auto;display: flex;justify-content: space-between;align-items: center;border-bottom: 1px solid #e6e6e6;padding: 4% 0}
+.sameSort{width: 75px;height: 30px;border-radius: 5px;line-height: 30px;display: inline-block;text-align: center;color: #696969;cursor: pointer;}
+.sameSort i{font-size: .8em;padding-left: 1px;}
+.sortColor_0{background: #fff!important;border:1px solid #c4c4c4;height: 31px;}
+.sortColor_1{background: #a1d481;color: #fff;border: none!important;}
+.works{margin: 0 auto 2%;padding: 0 3%;}
+.inforBox{ padding: 2%;display: flex;justify-content: space-between;align-items: center;}
+.leftBox{display: flex;align-items: center;width: 33%;justify-content: space-between;}
+.head{width:40px;height:40px;border-radius: 50%;pointer-events: none;background: #a1d481;text-align: center;position: relative}
+.head i{font-size:1.8em;color:#fff;}
+.head img{width: 100%;height: 100%;border-radius: 50%;}
+.name,.allTicket{color: #696969;}
+.allTicket i{vertical-align: middle}
+.numId{font-size: .88em;color: #a0a2a1;}
+.worksImg{width: 95%;margin: 0 auto;padding: 1% 0 3%;cursor: pointer;}
+.worksImg img{width: 100%;}
+.allTicket{padding-right: 15px;}
+.infor{white-space: nowrap;}
+/* 首页 右侧按钮 */
+.rightBtn{position: fixed;z-index: 10;right:5px;bottom:15%;}
+.rightBtn div{width:50px;height:50px;border-radius: 50%;background:#ecf2f7;text-align: center;margin: 15% auto;color: #696969;}
+.rightBtn div a{display: block;padding:20% 0;line-height: 1.1;}
+.voteNum{font-size: 1.2em;}
+.icon-paihang-shouye:before {
+    content: "\e65b";
+    font-size: .75em;
+    vertical-align: text-bottom;
+    padding-right: 5px;
+}
+.voteBtn{border-radius: 4px;letter-spacing: 4px;font-size: 1.1em;text-align: center;}
+/* 提交按钮 */
+.subBtn{width: 75%;margin: 0 auto;height:35px;line-height: 35px;text-align: center;color: #fff;background: #a1d481;border-radius: 4px;cursor: pointer;}
+/* 协议 */
+.ruleBtn{text-align: center;font-size: .88em; padding: 5px 0 30%;color: #696969;}
+.ruleBtn input{width: 12px;height: 12px;border-radius: 50%;border: 1px solid #bcbcbc;margin-right: 3px;}
+.ruleBtn input:checked{background:url(../img/sure.png)no-repeat;background-size:100% 100% ;}
+.ruleBtn a{color: #2f65d3;border-bottom: 1px solid #2F65D3;padding: 3px 0;cursor: pointer;}
+/* 二次确认 */
+.page1_1{padding:6% 5%;}
+.pointBox_1{width: 100%;position: fixed;top: 0;left: 0;right: 0;background: #ffffd1;color: #d00f0f;padding: 1% 0;z-index: 10;text-align: center;font-size: .9em;font-weight: bold;}
+.btnBox{text-align: center; display: flex; justify-content: space-between;width:90%;margin: 0 auto;padding:5% 0 ;}
+.sameBtn{width: 120px;height:40px;line-height: 40px;border-radius: 5px;background: #a1d481;color: #fff;}
+.btnBox a:nth-child(1){color: #a1d481;border: 1px solid #a1d481;background: none;}
+	
+/*活动详情 page2*/
+.page2{background: #fff;min-height: 100%;height: 100%;}
+.page2 div{background: #fff;width: 100%;padding: 2% 5%;}
+.detailBox2{margin-bottom: 20%;}
+.detailBox>p{color: #a1d481;font-size: 1.2em;font-weight: bold;border-bottom:2px solid #a1d481;text-align: center;padding: 2% 0;}
+.textContent,.awardBox{padding: 4% 0!important;font-size: .95em;color: #696969;line-height: 1.8;}
+.textContent p{text-indent: 2em;}
+.awardBox{text-align: center;}
+.awardBox img{width: 60%;margin-top: 4px;}
+/*我的作品 page3*/
+.page3{color: #696969;}
+#myPhoto .worksImg{pointer-events: none;}
+.myInfor{width: 100%;line-height: 2;}
+.myInfor p{border-bottom: 1px solid #e5e5e5;padding: 3%;}
+.myInfor p:last-child{border: none;}
+.textDetail{padding: 1%;}
+.textDetail span{position: relative;display: block;padding: 0 5%;}
+.textDetail span a:before{content: '';width: 5px;height: 20px;background: #A1D481;display: block;position: absolute;left: 2%;top:3px;}
+.textDetail p{color: #b2b2b2;font-size: .9em;}
+.worksDetail .rightBox{display: flex;justify-content: space-between;padding: 5% 0 3%;width: 95%;margin: 0 auto; align-items: center;}
+.rightBox .allTicket img{width: 17%;vertical-align: text-bottom;pointer-events: none;}
+/*.rightBox .worksImg{pointer-events: none;}*/
+#myVideo{position: relative;}
+.stopBtn{width: 15%!important;position: absolute;left: 0;right: 0;margin: auto;top: 50%;z-index: 10;}
+.video{width: 100%;}
+/* 未参加&作品已删除 */
+.workStyle p{text-align: center;padding: 20% 0;pointer-events: none;color: #bababa;}
+.workStyle p img{width: 20%;}
+.workStyle a{display: block;margin: 0 auto;text-align: center;}
+#deleteWorks p img{width: 15%;}
+/*底部导航栏*/
+.bottomBox{position: fixed;bottom: 0;left: 0;right: 0;padding: 2% 0;border-top: 1px solid #e6e6e6;z-index: 50}
+.bar{display: flex;justify-content: space-between;align-items: center;}
+.bar li{width: 33.3%;text-align: center;color: #696969;font-size: .95em;cursor: pointer;line-height: 1.2}
+.barColor{color: #a1d481!important;}
+/* 上传照片&视频 */
+.page1_0{padding: 0 5%;margin-bottom: 25%;}
+.formBox{padding: 3% 0;line-height: 2.2;}
+.inputBox{border-bottom: 1px solid #dcdcdc;}
+.inputBox:last-child{border: none;}
+.inputBox input,.inputBox textarea{border-radius: 5px;border: 1px solid #dcdcdc;width: 100%;padding:3%;background: #f7f7f7;margin-bottom: 3%;}
+.inputBox textarea{height:80px;font-size: 1.3em;}
+.inputBox p{color: #696969;}
+.inputBox p a,.pointBox a{color: red;padding: 0 5px;}
+.inputBox p span,.pointBox{font-size: .88em;color: #bababa;}
+.weui-uploader__bd{margin: 3% auto;}
+.weui-uploader__input-box {border:2px solid #bababa;border-radius: 3px;background: #f7f7f7;cursor: pointer;width: 100px;height: 100px;margin-right:12px;position: relative;z-index: 20;}
+.weui-uploader__input-box:after, .weui-uploader__input-box:before{background-color: #BABABA;}
+ .fm,.file-panel{width: 100px;height:25px;line-height: 25px;letter-spacing: 4px; background-color: rgba(0,0,0,.5);color: #fff;text-align: center;font-size: .9em;position: absolute;bottom:38px;left: 0;right: 0;display: none}
+ .file-panel{bottom:0;top: 0}
+ .cancel{background: url(../img/delete.png)no-repeat;background-size: contain;width: 20px;height: 20px;display: block;position: absolute;top: 3px;right: 3px;}
+.weui-uploader__input-box{float: none}
+.webuploader-pick{background: none}
+/*#uploadBtn{position: absolute}*/
+#uploadBtn div:nth-child(2){width: 100px!important;height: 100px!important; }
+.upPhoto{display: flex;position: relative;}
+.uploader-list{display: flex;flex-wrap:wrap;}
+.uploader-list .photos{margin-right: 12px;position: relative;}
+.uploader-list div img{width: 100px;height: 100px;}
+.setFm{text-align: center;font-size:.9em;cursor: pointer;display: block;text-decoration: underline;color:#2f65d3;}
+.photos,.photos_1{width: 100px;}
+/*上传视频*/
+.videoBtn{margin:10px auto;}
+.upVideo{width: 100px;margin: 0 auto;}
+/* 弹窗 */
+.dialog{width: 90%;margin:0 auto;background: #FFFFFF;border-radius: 8px;padding: 5%;position: absolute;z-index: 101;top:12%;left: 0;right: 0;}
+.dialog>p{text-align: center;padding: 5% 0;}
+.closeBtn{width:5%;position: absolute;right: 3%;top: 3%;display: block;}
+.dialog0 h3{text-align: center;border-bottom: 1px solid #DCDCDC;padding: 2% 0;}
+.ruleText{padding: 3% 0;}
+.ruleText p{padding: 2% 0 5%;}
+/* 分享页面 */
+/* 分享--照片&视频 */
+.myInfor h3{width: 95%;padding: 3% 2%;border-bottom: 1px solid #dcdcdc;margin: 0 auto;color: #696969;line-height: 1.5;}
+.myInfor .rightBox{padding: 4% 0 0;width: 95%;margin: 0 auto;}
+.myInfor .allTicket{font-size: 1.2em;}
+.myInfor .allTicket img{width: 5%;vertical-align: middle;}
+.btnBox_1{padding-top: 0;}
+.btnBox_1 .sameBtn{display: inline-block;width: 30%;}
+.btnBox_1 a:nth-child(1){background: #ff6657;border: none;color: #fff;}
+.page4 .textDetail,.page5 .textDetail{padding: 3%;}
+#sharePhoto .worksImg{pointer-events: none;}
+/* 验证码弹窗 */
+.codeSub{margin: 0 auto;text-align: center;border-radius: 2em;width: 80%;}
+.codeBox{display: flex;align-items: center;justify-content: space-between;padding: 5%;}
+.reBtn{padding: 1%;color: #2f65d3;border-bottom:1px solid #2f65d3 ;white-space: nowrap;}
+.codeInput{width: 90%;margin: 0 auto;padding: 3%;border: 1px solid #dcdcdc;border-radius: 5px;display: block;}
+.dialog1 .point{color: #696969;font-size: .88em;text-align: center;padding: 2% 0;}
+/* 投票成功 */
+.dialog2{width: 70%;}
+.voteStyle{text-align: center;color: #696969;}
+.voteStyle i{font-size: 4em;}
+.voteStyle a{display: block;}
+/* 详情页 照片&视频*/
+.page5 h3{font-size: 1.1em;text-align: center;}
+.page5 .rightBox{width: 90%;border-bottom: 1px solid #dcdcdc;}
+.page5 .btnBox_1{padding: 3% 0;}
+#detailPhoto .worksImg{pointer-events: none;}
+/* 搜索页 */
+.page6 .searchBox{position: initial;background: #fff;border-bottom: 1px solid #dcdcdc;padding-bottom: 0;}
+.page6 .input_search{background: #ebebeb;}
+.keyText{text-align: right;width: 90%; margin: 0 auto;padding: 2% 0;font-size: .9em;color: #696969;}
+.keyText{text-align: right;width: 90%; margin: 0 auto;padding: 2% 0;font-size: .9em;color: #696969;}
+.page6 .allTicket img{width: 18%;vertical-align: text-bottom;}
+/*分享弹窗*/
+.shareDialog img{width:20%;position: absolute;right: 5%;z-index: 101;top: 5%;}
+.workImg{position: relative;}
+.stopBtn{top:40%}
+/*iphone5*/
+@media only screen and (max-width:320px ) {
+	.overTime p{width: 100%;font-size: .85em;transform: scale(.9);}
+   .dialog0{transform: scale(.85);top:0;padding: 1% 5%;}
+    #uploadBtn div:nth-child(2){width: 80px!important;height: 80px!important;}
+    .weui-uploader__input-box{width: 80px;height:80px;}
+    .photos, .photos_1{width: 80px;}
+    .uploader-list div img{width: 80px;height:80px;}
+    .fm,.file-panel{width: 80px;}
+    .page1_1 .uploader-list .photos{margin: 0 8px;}
+}

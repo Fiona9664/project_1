@@ -1,0 +1,175 @@
+@charset "utf-8";
+*{touch-action: pan-y;margin: 0;padding: 0;-webkit-tap-highlight-color: transparent;list-style: none;box-sizing: border-box;outline: none;text-decoration: none; -webkit-appearance: none;}
+i,em{ font-style: normal;}
+html, body{width: 100%;height: 100%;background-color: #fff;color: #fff;}
+input,textarea,button,select{cursor: pointer; border: none;background: none;outline: none;-webkit-appearance: none;resize: none;-webkit-user-select: text!important;user-select: text!important;font-size: .95em;color: #fff;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{font-size: .9em;color: #878787;}
+input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder{opacity: 0;}
+.page{width: 100%;height:100%;}
+.page0{background: url(../img/bg.jpg?v=1)no-repeat;background-size:100% 100% ;}
+/*标题样式*/
+.titleBox{width: 70%;margin: 0 auto;}
+.titleBox0{padding: 15% 0 2%;}
+.titleBox0 img{width: 100%;pointer-events: none;}
+.titleBox1{width: 65%;background: #f6646c;border-radius: 2em;text-align: center;padding: 2.5% 0;letter-spacing: 2px;}
+/*花样式*/
+.flowerBox{position: relative;width: 80%;margin: 0 auto;text-align: center;padding: 2% 0;transform: scale(.9);}
+.flowerBox img{pointer-events: none;}
+.flower img{width:35%;}
+.flower .swiper-slide:nth-child(1) img{width: 28%;}
+.pen{position: absolute;left: 0;right: 0;bottom: -45px;z-index: 100;}
+.pen img{width:40%;}
+/*修改前后按钮位置*/
+.swiper-button-next, .swiper-button-prev{top: 75%;
+    height: 30px; 
+    width: 30px; 
+    border-width: 5px 5px 0 0; 
+    border-color: #d6292f; 
+    border-style: solid; 
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    background-image: none;
+    border-radius:4px;
+}
+.swiper-button-next{right: 30px;}
+.swiper-button-prev{left: 30px;transform: rotate(-135deg);}
+/*水滴*/
+.rainBox{width: 45%;position: absolute; right: 8%;top: 36%;transform: rotate(20deg);z-index: 100;pointer-events: none;opacity: 0;}
+.rainBox img{width: 35%;}
+.rain_anim{animation: rain 2s linear  alternate;}
+@keyframes rain{
+	0%, 50%, 100% {opacity: 0;}
+	25%, 75% {opacity: 1;}
+}
+/*手引导*/
+.handBox{width:10%;position: absolute;right: 11%;top: 60%;pointer-events: none;animation: rain 3s linear infinite;}
+.handBox img{width: 100%;}
+@keyframes rain{
+	0%, 50%, 100% {opacity: 0;}
+	25%, 75% {opacity: 1;}
+}
+/*按钮*/
+.btnBox{width:90%;margin: 0 auto;position: absolute;bottom:2%;left: 0;right: 0;text-align: center;}
+.btnBox p{font-size: .85em;color: #843939;padding: 2% 0;}
+.btn{display: flex;justify-content: space-between;padding-bottom: 5%;}
+.btn button{width:160px;}
+.sameBtn{font-size: 1.1em;letter-spacing: 2px; font-weight:bold;border-radius:2em;padding: 2% 0;background: linear-gradient(#fb8488,#da3d3e);background: -webkit-linear-gradient(#fb8488,#da3d3e);}
+#lotteryBtn{width: 220px;position: relative;}
+#lotteryBtn span{font-weight: normal;font-size: .8em;position: absolute; white-space: nowrap; transform: scale(.83);top: 30%;color: #f4e2e2;}
+.lotteryColor{background: #ccc;}
+/*规则按钮样式*/
+.ruleBox{position: absolute;right: 2%;top: 38%; cursor: pointer;}
+.ruleBtn{width: 110px;height: 50px;line-height: 40px;letter-spacing:1px;border: 5px solid #fff;background: #f6646c;font-weight: bold;border-radius: 5px;text-align: center;}
+.ruleBox span:before,.ruleBox span:after{content: '';width: 3px;height: 13px;background: #d90f24;display:inline-block;position: absolute;}
+.ruleBox span:before{left: 20%;}
+.ruleBox span:after{right: 20%;}
+/*规则页面*/
+.rulePage{width: 100%;height: 100%;position: fixed;top:0;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,.7);z-index: 1000;}
+.ruleContent{width: 80%;margin:21% auto 0;background: #ffa3a6;padding: 5%;font-size: .88em;letter-spacing: 2px;line-height: 1.8;position: relative;}
+.closeBtn,.closeBtn1{position: absolute;right: 2%;top:2%;width: 9%;cursor: pointer;}
+.ruleContent h3{text-align: center;padding-bottom: 2%;}
+.ruleContent div:nth-child(3) p{color: #992222;}
+.ruleContent div:last-child{padding-top: 8%;}
+.bottomBox{width: 88%;height:30px;margin: 0 auto;background: #ff9397;box-shadow: 0px -4px 10px #df7a8d;position: relative;}
+ .trapezoid{
+ 	border-bottom: 100px solid #db7889;
+    border-left: 165px solid transparent;
+    border-right: 165px solid transparent;
+    width: 100px;        
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 6.8%;
+	z-index: -2;
+	margin: 0 auto;
+} 
+.page1{background: url(../img/lotteryBg.jpg?v=1)no-repeat;background-size:100% 100% ;}
+/*刮刮卡区域*/
+.lotteryBox{width: 100%;margin: 0 auto; position: absolute;left: 0; right: 0;top:44%;}
+.lotteryBox .img{width: 95%;position: absolute; z-index: 1000; top: -22%;margin: auto;left: 0; right: 0;pointer-events: none;}
+.lotteryBox .img img{width: 100%;}
+.lottery_gua{width: 95%;background: url(../img/lotteryImg.png) no-repeat center center;background-size:100% 100%;margin: 0 auto;}
+.giftBox{width: 65%;margin: 0 auto;display: flex;align-items: center;position: absolute;left: 0;right: 0;top:20%;justify-content: space-between;}
+.giftBox img{width: 37%;pointer-events: none;}
+.giftBox span,.thanks{font-size: 1.4em;color: #f65e65;font-weight: bold;}
+#canvas{position: relative;z-index: 100;}
+.thanks{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    bottom: 0;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+/*奖品提示&领取地址*/
+.pointBox{width:75%;margin: 0 auto;position: absolute;bottom: 5%;left: 0;right: 0;line-height: 1.8;}
+.pointBox p{color: #f45c60;font-size: .9em;}
+.shareBox img{width: 20%;
+    position: absolute;
+    right: 10%;
+    top: 5%;}
+/*个人信息*/
+.formBox{width: 90%;border-radius: 10px;background: #ffa3a6;margin:20% auto 0;padding:10% 5% 20%;line-height: 3;font-size: .95em;position: relative;}
+.formBox .inputBox{display: flex;justify-content: space-between;}
+.formBox label{border-bottom: 1px solid #c7c7c7;width: 60%;padding-left: 5%;border-radius: initial;}
+.sureBtn{width: 30%;height:30px;line-height: 30px; position: absolute;bottom:5%;margin: auto;left: 0;right: 0;text-align: center;border-radius: 5px;border:1px solid #dfdfdf;}
+/*动画*/
+.anim1{animation: swing 2s ease-in-out  infinite;}
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 1, 0, 20deg);
+    transform: rotate3d(0, 1, 0, 20deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 1, 0, -15deg);
+    transform: rotate3d(0, 1, 0, -15deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 1, 0, 15deg);
+    transform: rotate3d(0, 1, 0, 15deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 1, 0, -5deg);
+    transform: rotate3d(0, 1, 0, -5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate3d(0,1, 0, 0deg);
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+}
+/*iphone5*/
+@media only screen and (max-width:320px ) {
+	.topBox{transform: scale(.95);}
+	.btnBox{bottom: 0;transform: scale(.9);width: 100%;}
+	.btn button{width: 150px;}
+	.ruleBtn{width: 100px;height: 45px;line-height: 35px;}
+	.pen img{width: 43%;}
+	.titleBox0{padding-top: 15%;}
+	.pointBox{width:80%}
+	.lotteryBox{top: 38%;}
+	.giftBox{transform: scale(.9);width: 75%;}
+	.giftBox img{width: 32%;}
+	.ruleContent{margin-top: 10%;line-height: normal;}
+	.trapezoid{border-left: 140px solid transparent;border-right: 140px solid transparent;bottom: 7.8%;}
+}
+/*iphone6P/7P*/
+@media only screen and (min-width:411px ) and (max-width:414px) {
+	.trapezoid{border-left: 183px solid transparent;border-right: 183px solid transparent;}
+	.btnBox{bottom:5%}
+}
+/*iphoneX*/
+@media only screen and (min-height:724px ) {
+	.flowerBox{margin: 15% auto;}
+	.btnBox{bottom: 10%;}
+	.lotteryBox{top: 47%;}
+	.lotteryBox .img{top:-17%}
+}
+/*screen 360px*/
+@media only screen and (width:360px ) {
+	.trapezoid{border-left: 158px solid transparent;border-right: 158px solid transparent;}
+}

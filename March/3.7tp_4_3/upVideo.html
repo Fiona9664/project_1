@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="css/weui.min.css" />
+	<link rel="stylesheet" href="css/webuploader.css">
+	<link rel="stylesheet" href="css/iconfont.css?v=1">
+	<link rel="stylesheet" href="css/index.css?v=1" />
+	<script type="text/javascript" src="js/weui.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+	<script type="text/javascript" src="js/index.js?v=1" ></script>
+    <title>摄影投票活动</title>
+</head>
+<body>
+	<!--参加比赛 视频---->
+	<div class="page1_0 page sameBox" id="upVideo">
+		<div class="detailBox">
+			<p>参赛信息</p>
+		</div>
+		<div class="formBox">
+			<div class="inputBox inputBox0">
+				<p>姓名<a>*</a><span>(汉字或字母，10个字以内)</span></p>
+				<label>
+					<input type="text" name="name" id="name" placeholder="请输入姓名" maxlength="10"/>
+				</label>
+			</div>
+			<div class="inputBox inputBox0">
+				<p>手机号码<a>*</a><span>(请务必填写真实手机号码，作为领奖凭证)</span></p>
+				<label>
+					<input type="text" name="tel" id="tel" placeholder="请输入手机号码" maxlength="11"/>
+				</label>
+			</div>
+			<div class="inputBox inputBox0">
+				<p>作品描述<a>*</a><span>(100个字以内)</span></p>
+				<textarea placeholder="描述" id="textArea"></textarea>
+			</div>
+			<div class="inputBox inputBox0">
+				<p>上传图片<a>*</a></p>
+				<div id="uploadBtn" class="weui-uploader__input-box videoBtn"></div>
+				<div class="upPhoto upVideo">
+					<div id="photoList" class="uploader-list" >
+					</div>
+				</div>
+			</div>
+			<div class="inputBox inputBox0 ">
+				<p>视频地址<a>*</a>(先将视频上传到第三方网站)</p>
+				<label>
+					<input type="text" name="myUrl" id="myUrl" placeholder="请输入视频地址"/>
+				</label>
+			</div>
+			<div class="pointBox">注: <a>*</a>为必填项</div>
+		</div>
+		<div class="subBtn" data-sub="1">提交</div>
+		<div class="ruleBtn">
+			<label>
+				<input type="checkbox" name="rule" id="rule"/>勾选同意<a>《报名协议》</a>
+			</label>
+		</div>
+	</div>
+	<!-- 参加比赛 二次确认 -->
+	<div class="page1_1 page sameBox" style="margin-bottom: 30%;display: none;">
+		<div class="pointBox_1">请确认您的信息是否正确，提交后无法修改</div>
+		<div class="detailBox"><p>参赛信息</p></div>
+		<!--个人信息和作品描述-->
+		<div class="myInfor sameBox">
+			<p id="myName">张小明</p>
+			<p id="myTel">12245126458</p>
+			<div class="textDetail">
+				<span><a></a>作品描述</span>
+				<p>碧波荡漾，水天一色，在那一瞬间，画面仿佛都静止了，留下的只是老人那一个孤独的背影和轻微的呼吸声。</p>
+			</div>
+		</div>
+		<!-- 图片 -->
+		<div class="worksImg">
+			<img src="img/stop.png" class="stopBtn"/>
+			<video poster="img/img0.jpg" id="video_1" class="video"></video>
+		</div>
+		<div class="btnBox" style="clear: both;">
+			<a id="changeBtn" class="sameBtn">返回修改</a>
+			<a id="subBtn_2" class="sameBtn">提交</a>
+		</div>
+	</div>
+	<!-- 弹窗 -->
+	<div class="dialogBox" style="display: none;">
+		<!-- 参加协议 -->
+		<div class="dialog dialog0" onclick="$(this).hide();$('.dialogBox').hide()">
+			<i class="iconfont closeBtn  icon-guanbi"></i>
+			<h3>报名协议</h3>
+			<div class="ruleText">
+				<p>1.本网站为上海交通大学网上报名系统，考生点击“同意”，即表示同意本协议项下的所有条款和本网站所示《考生须知》的全部内容。</p>
+				<p>2.考生须仔细阅读《考生须知》，理解并同意其全部内容。</p>
+				<p>3.考生不得以他人身份或委托他人进行报名，否则，需承担由此导致考生本人及其它考生无法报名或考试的全部责任。</p>
+				<p>4.考生所填写的个人信息资料须真实准确。本网站在考生确认提交个人信息前提供审核更正的机会；一旦注册，任何组织、机构或个人无权更改、注销考生信息。</p>
+			</div>
+		</div>
+	</div>
+	<!--底部导航栏-->
+	<div class="bottomBox sameBox">
+		<ul class="bar">
+			<li class="barColor"><i class="iconfont icon-zhuye sameIcon"></i><p>首页</p></li>
+			<li><i class="iconfont icon-huodong sameIcon"></i><p>活动介绍</p></li>
+			<li><i class="iconfont icon-wodedangxuan sameIcon"></i><p>我的作品</p></li>
+		</ul>
+	</div>
+	<script src="js/webuploader.js"></script>
+<script>
+$(function(){
+	// 初始化Web Uploader
+	var uploader = WebUploader.create({
+		// 选完文件后，是否自动上传。
+		auto: true,
+		// swf文件路径
+		swf:'js/Uploader.swf',
+		// 文件接收服务端。
+		server: 'http://webuploader.duapp.com/server/fileupload.php',
+		// 选择文件的按钮。可选。
+		// 内部根据当前运行是创建，可能是input元素，也可能是flash.
+		pick: '#uploadBtn',
+		// 只允许选择图片文件。
+		accept: {
+			title: 'Images',
+			extensions: 'gif,jpg,jpeg,bmp,png',
+			mimeTypes: 'image/*'
+		},
+		fileNumLimit: 1,//上传数量限制
+		fileSizeLimit:310*1024*1024,//限制上传所有文件大小
+		// fileSingleSizeLimit: xx,//限制上传单个文件大小
+	});
+	// 当有文件添加进来的时候
+	uploader.on( 'fileQueued', function( file ) {
+		var $li = $(
+				'<div id="' + file.id + '" class="photos">' +
+				'<img>' +
+				'</div>'
+				),
+				$btns = $('<div class="file-panel">' +
+						'<span class="cancel"></span></div>').appendTo( $li )
+				$img = $li.find('img');
+
+		var $list = $("#photoList");
+		// $list为容器jQuery实例
+		$list.append( $li );
+		$("#uploadBtn").hide();
+		// 创建缩略图
+		// 如果为非图片文件，可以不用调用此方法。
+		// thumbnailWidth x thumbnailHeight 为 100 x 100
+		var thumbnailHeight=100;
+		var thumbnailWidth = 100;
+		uploader.makeThumb( file, function( error, src ) {
+			if ( error ) {
+				$img.replaceWith('<span>不能预览</span>');
+				return;
+			}
+
+			$img.attr( 'src', src );
+		}, thumbnailWidth, thumbnailHeight );
+	});
+	// 文件上传过程中创建进度条实时显示。
+	uploader.on( 'uploadProgress', function( file, percentage ) {
+		var $li = $( '#'+file.id ),
+				$percent = $li.find('.progress span');
+
+		// 避免重复创建
+		if ( !$percent.length ) {
+			$percent = $('<p class="progress"><span></span></p>')
+					.appendTo( $li )
+					.find('span');
+		}
+		$percent.css( 'width', percentage * 100 + '%' );
+	});
+	// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+	uploader.on( 'uploadSuccess', function( file ) {
+		$( '#'+file.id ).addClass('upload-state-done');
+	});
+	// 文件上传失败，显示上传出错。
+	uploader.on( 'uploadError', function( file ) {
+		var $li = $( '#'+file.id ),
+				$error = $li.find('div.error');
+		// 避免重复创建
+		if ( !$error.length ) {
+			$error = $('<div class="error"></div>').appendTo( $li );
+		}
+		// weui.alert("上传失败");
+	});
+	// 完成上传完了，成功或者失败，先删除进度条。
+	uploader.on( 'uploadComplete', function( file ) {
+		$( '#'+file.id ).find('.progress').remove();
+		$(".photos img").click(function () {
+			$(this).nextAll(".file-panel").fadeIn(200);
+			setTimeout(function(){
+				$(".file-panel").fadeOut(200);
+			},5000);
+		})
+		//删除
+		$(".cancel").click(function () {
+			var attrId = $(this).parent().parent().attr('id');
+			uploader.removeFile(file,attrId);
+			$(this).parent().parent().remove();
+			$("#uploadBtn").show();
+		})
+	});
+});
+</script>
+</body>
+</html>
