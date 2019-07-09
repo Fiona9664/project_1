@@ -1,0 +1,99 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>飞阅江苏重力感应</title>
+    <meta name="description" content=""/>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" href="css/main.css?v=4.3"/>
+    <script type="text/javascript">
+		
+		//页面打开 音乐自动播放
+		document.addEventListener('DOMContentLoaded', function() {
+			function audioAutoPlay() {
+				var music = document.getElementById("bgm");
+				music.play();
+				document.addEventListener("WeixinJSBridgeReady", function() {
+					music.play();
+				})
+			}
+			audioAutoPlay();
+		});
+	</script>
+</head>
+<style>
+	.titleBox{
+		text-align: center;
+		line-height: 2;
+		border-bottom: 1px solid #ff5d5a;
+		margin-bottom: 10px;
+	}
+	.title2{font-size: 1;white-space: nowrap;}
+</style>
+<body>
+<div class="loading_bg" id="loading_bg">
+    <div class="loading_logo"><div class="imgbox  loading-anm"><img src="images/preload/logo1.png" /></div></div>
+    <div class="loading_text" id="loading_text">已加载 0 %</div>
+</div>
+<div id="main">
+    <div id="bg"></div>
+    <div id="three"></div>
+</div>
+<audio id="bgm" src="images/music.mp3" loop preload></audio>
+
+<div class="music pause"></div>
+<div class="layer_s1">
+	<div class="box">
+		<a href="javascript:;" class="btn_close"></a>
+		<div class="jz_top"></div>
+		<div class="jz_bottom"></div>
+		<div class="content">
+			<div class="txt vertical_rqly">
+				<p class="text_head">
+					<img src="">
+				</p>
+				<div class="titleBox">
+					<h2 class="title1"></h2>
+					<p class="title2"></p>
+				</div>
+				<div class="text_info">
+					<div class="text_cont">
+						新游戏规则下的南京首场土拍结果将在本周出炉。本次土拍采用网上竞拍的方式，4天时间将会出让27宗地块，其中麒麟1宗地块将会成为房企争抢的焦点
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="js/imagesloaded.js"></script>
+<script type="text/javascript" src="js/img.js?62"></script>
+<script type="text/javascript" src="js/common.js?v=1.7"></script>
+<script type="text/javascript" src="js/jinling.js?6.6"></script>
+<script type="text/javascript" src="js/project.js"></script>
+<script type="text/javascript">
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+	(function(doc,win){
+		var docEl=doc.documentElement;
+		var resizeEvt='orientationchange'in window?'orientationchange':'resize';
+		var recalc = function(){
+			var clientWidth=docEl.clientWidth;
+			if(!clientWidth)return;
+			docEl.style.fontSize=100*(clientWidth/640)+'px';
+		};
+		if(!doc.addEventListener)return;
+		win.addEventListener(resizeEvt,recalc,false);
+		doc.addEventListener('DOMContentLoaded',recalc,false)
+	})(document,window);
+</script>
+</body>
+</html>

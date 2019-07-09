@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<link rel="stylesheet" href="css/index.css?v=1" />
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<title>江山汇家书</title>
+	<script>
+		// loading 加载
+		var resource = ["img/bg0.jpg","img/img0.png","img/img1.png","img/img2.png","img/d0.jpg","img/d1.jpg","img/d2.jpg","img/d3.jpg","img/d4.jpg","img/d5.jpg"];
+		var H5 = {
+		    oDiv : null,
+		    init: function(){
+		        this.preloadimages(resource).done(function(images){
+		            $(".preload").hide();
+					$(".wrapper").show();
+		        })
+		    },
+		    preloadimages : function(arr){
+		        var newimages=[], loadedimages=0;
+		        var postaction=function(){};
+		        var arr=(typeof arr!="object")? [arr] : arr
+		        function imageloadpost(){
+		            ++loadedimages;
+		            if (loadedimages==arr.length){
+		                postaction(newimages)
+		            }
+		            else{
+		                $(".pre_num").text(Math.floor(loadedimages / (resource.length - 1) * 100) + "%")
+		            }
+		        }
+		        for (var i=0; i<arr.length; i++){
+		            newimages[i]=new Image()
+		            newimages[i].src=arr[i]
+		            newimages[i].onload=function(){
+		                imageloadpost()
+		            }
+		            newimages[i].onerror=function(){
+		                imageloadpost()
+		            }
+		        }
+		        return {
+		            done:function(f){
+		                postaction=f || postaction
+		            }
+		        }
+		    }
+		};
+		H5.init();
+		//页面打开 音乐自动播放
+		document.addEventListener('DOMContentLoaded', function() {
+			function audioAutoPlay() {
+				var music = document.getElementById("sound");
+				music.play();
+				document.addEventListener("WeixinJSBridgeReady", function() {
+					music.play();
+				}, false);
+			}
+			audioAutoPlay();
+		});
+	</script>
+	</head>
+	<body>
+		<audio src="music.mp3" autoplay id="sound" preload loop="loop"></audio>
+		<div class="music round"><img src="img/icon1.png"/></div>
+		<!--加载-->
+		<div class="preload ">
+			<div>
+				<p class="pre_num">0%</p>
+			</div>
+		</div>
+		<div class="wrapper" style="display: none;">
+			<div class="imgBox"><img src="img/img0.png"/></div>
+			<div class="boxs">
+				<div class="titleBox"><img src="img/img1.png"/></div>
+				<ul class="cententBox">
+					<li>
+						<div style="color: #51c5f5;">A</div>
+						<div>A地块详情</div>
+					</li>
+					<li>
+						<div style="color: #f58659;">B</div>
+						<div>B地块详情</div>
+					</li>
+					<li>
+						<div style="color: #f3c777;">C</div>
+						<div>C地块详情</div>
+					</li>
+					<li>
+						<div style="color: #278fba;">D</div>
+						<div>D地块详情</div>
+					</li>
+					<li>
+						<div style="color: #9fd27f;">E</div>
+						<div>E地块详情</div>
+					</li>
+					<li>
+						<div style="color: #8d72b0;">亲水<br/>观江平台</div>
+						<div>亲水观江<br/>平台详情</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 详情 -->
+		<div class="detailPage" style="display: none;"><img  src=""/><div class="backBtn">返回<br/>首页</div><</div>
+		
+<script>
+	var music = document.getElementById("sound");
+	var flag = 1;
+	$(".cententBox li").click(function(){
+		var indexs = $(this).index();
+		$(".detailPage img").attr("src","img/d"+indexs+".jpg");
+		$(".wrapper").hide();
+		$(".detailPage").show();
+		$(window).scrollTop(0)
+	})
+	//返回
+	$(".backBtn").click(function(){
+		$(".wrapper").show();
+		$(".detailPage").hide();
+	})
+	//音乐暂停
+	$(".music").click(function(){
+		if(flag){
+			music.pause();
+			flag = 0;
+			$(".music").removeClass("round");
+		}else{
+			music.play();
+			flag = 1;
+			$(".music").addClass("round");
+		}
+	})
+</script>
+	</body>
+</html>

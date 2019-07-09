@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<link rel="stylesheet" href="css/weui.min.css" />
+	<link rel="stylesheet" href="css/index.css?v=2.2" />
+	<script src="js/weui.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<title></title>
+	<script>
+		// loading 加载
+		var resource = ["img/bg.png","img/img0.png","img/img1.png","img/img2.png","img/img3.png","img/logo.png","img/icon.png","img/yes.png","img/logo1.png"];
+		var H5 = {
+		    oDiv : null,
+		    init: function(){
+		        this.preloadimages(resource).done(function(images){
+		            $(".preload").hide();
+					$(".wrapper").show();
+		        })
+		    },
+		    preloadimages : function(arr){
+		        var newimages=[], loadedimages=0;
+		        var postaction=function(){};
+		        var arr=(typeof arr!="object")? [arr] : arr
+		        function imageloadpost(){
+		            ++loadedimages;
+		            if (loadedimages==arr.length){
+		                postaction(newimages)
+		            }
+		            else{
+		                $(".pre_num").text(Math.floor(loadedimages / (resource.length - 1) * 100) + "%")
+		            }
+		        }
+		        for (var i=0; i<arr.length; i++){
+		            newimages[i]=new Image()
+		            newimages[i].src=arr[i]
+		            newimages[i].onload=function(){
+		                imageloadpost()
+		            }
+		            newimages[i].onerror=function(){
+		                imageloadpost()
+		            }
+		        }
+		        return {
+		            done:function(f){
+		                postaction=f || postaction
+		            }
+		        }
+		    }
+		};
+		H5.init();
+	</script>
+</head>
+<body>
+	<!--加载-->
+	<div class="preload ">
+		<div>
+			<img src="img/logo1.png">
+			<p class="pre_num">100%</p>
+		</div>
+		
+	</div>
+	<div class="wrapper" style="display: none;">
+		<div class="part1 part">
+			<img src="img/logo.png"/ class="logo">
+			<img src="img/img0.png" />
+		</div>
+		<!-- 报名 -->
+		<div class="part2 part">
+			<img src="img/img1.png"/>
+			<div class="formBox">
+				<form>
+					<!-- 个人信息 -->
+					<div class="infor">
+						<div class="inputBox">
+							<label><span>姓名</span><input type="text" id="user" name="user" autocomplete="off"/></label>
+						</div>
+						<div class="inputBox">
+							<label><span>电话</span><input type="tel" id="tel" name="tel" autocomplete="off" maxlength="11"/></label>
+						</div>
+						<div class="inputBox">
+							<label style="position: relative;background: url(img/icon.png)no-repeat right center;background-size: 25px 25px;">
+								<span>小区</span>
+								<input type="text" name="addr" id="addr" class="addr" autocomplete="off"  oninput="setinput(this);"/>
+								<ul class="keyWord" id="keyWord" style="display: none;">
+									
+								</ul>
+							</label>
+						</div>
+					</div>
+					<!-- 购买意向 -->
+					<div class="selectBox">
+						<p class="p1">购买意向: </p>
+						<div class="select">
+							<label><input type="checkbox" class="check" name="buy" value="0"/>电器</label>
+							<label><input type="checkbox" class="check" name="buy" value="1"/>瓷砖</label>
+							<label><input type="checkbox" class="check" name="buy" value="2"/>卫浴</label>
+							<label><input type="checkbox" class="check" name="buy" value="3"/>地板</label>
+							<label><input type="checkbox" class="check" name="buy" value="4"/>橱柜</label>
+							<label><input type="checkbox" class="check" name="buy" value="5"/>木制品</label>
+							<label><input type="checkbox" class="check" name="buy" value="6"/>门窗</label>
+							<label><input type="checkbox" class="check" name="buy" value="7"/>五金</label>
+						</div>
+					</div>
+					<!-- 签到礼 -->
+					<div class="selectBox">
+						<p class="p2">签到礼: </p>
+						<div class="select select1">
+							<label><input type="checkbox" class="check" name="gift" value="30"/>30远特权卡限量购买</label>
+						</div>
+					</div>
+					<!-- 其他需求 -->
+					<div class="otherBox">
+						<label>
+							<span>其他需求: </span>
+							<input type="text" placeholder="请自填您的需求" class="need" id="need"/>
+						</label>
+					</div>
+					<!-- 提交按钮 -->
+					<div class="buttonBox" id="subBtn">提交报名</div>
+				</form>
+			</div>
+		</div>
+		<div class="part3 part"><img src="img/img2.png"/></div>
+	</div>
+	<!-- 弹窗 -->
+	<div class="dialogBox" style="display: none;" onclick="$(this).hide()">
+		<img src="img/img3.png" />
+	</div>
+<script>
+	
+	var SelectFalse = false;
+	$(function(){$("input").on("blur", function() {$(window).scrollTop($(window).scrollTop())})})
+	// 表单正则
+	$("#subBtn").click(function(){
+		var chboxValue = [];
+		var checkArry = $('input[name = buy]');
+		if(!$("#user").val()){
+			weui.topTips("请填写你的姓名", 2000);return false;
+		}
+		if(!/1\d{10}/.test($("#tel").val())){
+			weui.topTips("请正确填写手机号码", 2000);return false;
+		}
+		if(!$("#addr").val()){
+			weui.topTips("请填写小区名称", 2000);return false;
+		}
+		for(var i = 0; i<checkArry.length;i++){
+			if(checkArry[i].checked){ //选中返回true
+				SelectFalse = true;
+				chboxValue.push(checkArry[i].value)//将被选择的值追加到
+			}
+		}
+		if(!SelectFalse){
+			weui.topTips("请至少选择一个购买意向", 2000);return false;
+			return false
+		}
+		
+		var loading = weui.loading("提交中...");
+		$.ajax({
+			type: "post",
+			url: "",
+			data: {
+				username: $("#user").val(),
+				userTel: $("#tel").val(),
+				addr: $("#addr").val(),
+				chboxValue:chboxValue,
+			},
+			dataType: "json",
+			success: function (data) {
+				loading.hide();
+				$(".dialogBox").show();//弹窗
+		
+			},
+			error: function (data) {
+				weui.alert("上传失败");
+				loading.hide();
+			}
+		});
+	})
+	// 模糊查询
+	var TempArr=["小区0","s","sssddd"];//存储li  
+	function selectV(_this){
+		var vals = $(_this).text();
+		console.log(vals)
+		$("#addr").val(vals);
+		$("#keyWord").hide()
+	}
+	function setinput(_this){  
+	    var ulBox = $("#keyWord");  
+	    ulBox.html("");  
+	    for(i=0;i<TempArr.length;i++){ 
+	        //若找到以xxx的内容开头的，添li  
+	        if(TempArr[i].substring(0,_this.value.length).indexOf(_this.value)==0){  
+				$("#keyWord").show();
+	            var lis = $("<li onclick='selectV(this)'></li>").text(TempArr[i]);  
+	            ulBox.append(lis);  
+	        }
+	    }  
+	}  
+</script>
+</body>
+</html>

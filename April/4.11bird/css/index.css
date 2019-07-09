@@ -1,0 +1,456 @@
+@charset "utf-8";
+*{-webkit-overflow-scrolling:touch;margin: 0;padding: 0;-webkit-tap-highlight-color: transparent;list-style: none;box-sizing: border-box;outline: none;text-decoration: none; -webkit-appearance: none;}
+html, body{width: 100%;height: 100%;color: #fff;overflow: auto;}
+img{pointer-events: none}
+/*加载*/
+.preload,.showBox{width: 100%;height: 100%;overflow:hidden;position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 1000;background: url(../images/loadingBg.png)no-repeat;background-size:100% 100% ;}
+.preload .logo0{position: absolute;right: 0;top: 0;width: 40%;margin: 0 auto;left: 0;bottom: 0;margin-top: 50%;margin-left: 50%;}
+.preload .logo0 img{width:30%;display: block;}
+.preload p{color: #000;transform: rotate(90deg);}
+.showBox{z-index:999 ;}
+.roundBox{width: 250px;height: 250px;border-radius: 50%;position: absolute;margin:auto;top:0;left: 0;bottom: 0;right: 0;}
+.roundBox img{position: absolute;width: 100%;}
+.round0{animation: rounds 4s linear infinite alternate;}
+.round1{width: 95%;left: 0;right: 0;top: 0;bottom: 0;margin: auto;animation: rounds 4s linear infinite ;}
+.round3{width: 200px;height:200px;border-radius: 50%;background: #dff6f1;position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;z-index: 100;}
+@-webkit-keyframes rounds{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg)}
+}
+.round3 p{transform: rotate(90deg);color: #414141;text-align: center;position: absolute;bottom: 0;top: 0;}
+.pre_num{font-size: 1.5em!important; right:200px;}
+.texts{right:100px;height: 100px;}
+.texts img{width: 100px;}
+/*logo*/
+.logo0{position: absolute;right:0px;top:230px;}
+.logo0 img{width:60%;}
+.logo1{position: absolute;top: 25px;right: 10px;display: flex;align-items: center;flex-direction: column;}
+.logo1 img{width: 30px;}
+
+/* 场景背景 */
+.swiper-container{width: 100%;height: 100%;margin-left: auto;margin-right: auto;}
+.swiper-slide{width: 100%;height: 100%;}
+.bg1{background: url("../images/bg1.png")no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+.bg2{background: url("../images/bg2.png")no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+.bg3{background: url("../images/bg3.png")no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+.bg4{background: url("../images/bg4.png")no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+.bg5{background: url("../images/bg5.png")no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+.bg6{background: url("../images/bg6.png")no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+.bg7{background: url("../images/bg7.png?v=1")no-repeat;-webkit-background-size: 100% 100%;background-size: 100% 100%;}
+/* 场景 文字 */
+.textBox{position: absolute;z-index: 10;line-height: 2;transform: rotate(90deg)scale(.65);}
+.textBox img{opacity: 0;pointer-events: none;}
+.textBox0{top:145px;right: -180px;text-align: left;}
+.textBox0 img:nth-child(1){width:80%;}
+.textBox0 img:nth-child(2){width: 100%;}
+.textBox0 img:nth-child(3){width: 61%;}
+.textBox1{bottom: 185px ;right:-210px; text-align: right;}
+.textBox1 img:nth-child(1){width:75%;}
+.textBox1 img:nth-child(2){width: 70%;}
+.textBox1 img:nth-child(3){width:90%;}
+.textBox2{top:195px;right: -180px;}
+.textBox2 img:nth-child(1){width:30%;display:block;padding-bottom: 10px;}
+.textBox2 img:nth-child(2),.textBox2 img:nth-child(3){width: 60%;}
+.textBox3{top:165px;right: -180px;}
+.textBox3 img:nth-child(1){width:50%;}
+.textBox3 img:nth-child(2){width: 50%;}
+.textBox3 img:nth-child(3){width:80%;}
+.textBox3 img:nth-child(4){width:70%;}
+.textBox4{bottom:175px;right:-200px;text-align: right;}
+.textBox4 img:nth-child(1){width:50%;}
+.textBox4 img:nth-child(2){width: 58%;}
+.textBox4 img:nth-child(3){width:80%;}
+.textBox5{bottom:220px;right:-240px;text-align: right;}
+.textBox5 img:nth-child(1),.textBox5 img:nth-child(2){width:55%;}
+.textBox6{top: 190px;right: -160px;}
+.textBox6 img:nth-child(1){width:73%;}
+.textBox6 img:nth-child(2){width: 70%;}
+.cloudBox7{padding: 25% 15%;}
+/*字的动画*/
+.p1{animation: dis2 1s linear 1;animation-fill-mode: forwards;}
+.p2{animation: dis2 1s 1s linear 1;animation-fill-mode: forwards;}
+.p3{animation: dis2 1s 2s linear 1;animation-fill-mode: forwards;}
+.p4{animation: dis2 1s 3s linear 1;animation-fill-mode: forwards;}
+/* 云朵 */
+.cloudBox{width: 100%;text-align: right;padding: 5% 4%;}
+.cloud{width:80%;display: inline-block;margin-bottom:15%;}
+.cloud1{padding-right: 8%;}
+.cloud img{width:60%;}
+.cloud1 img{width: 40%}
+.cloud0_3{margin-bottom:80px;width: 70%;}
+.cloud0_3 img{width: 50%;}
+.cloud0_4{width: 70%;margin-bottom: 20%;}
+.cloud0_5{margin-bottom:132px;width: 70%;}
+.cloudBox6{padding: 38% 4%;}
+.cloud0_6{width: 65%;}
+.cloud1_6{padding-right: 8%;position: absolute;width: 259px;height: 145px;right: 68px;bottom: 59px;}
+.cloud0_7{width:85%;margin-bottom: 30%;}
+.cloud1_7{padding-right: 0;}
+/*云朵移动动画*/
+.anim7{animation: anim7 3s linear infinite alternate;}
+.anim8{animation: anim7 5s linear infinite alternate;}
+@-webkit-keyframes anim7{
+    0%{transform: translate(10px,20px);}
+    100%{transform: translate(0px,0px);}
+}
+.anim9{animation: anim9 30s linear infinite alternate;}
+@-webkit-keyframes anim9{
+    0%{transform: translate(0,0px);}
+    100%{transform: translate(0,100px);}
+}
+/* 太阳 */
+.sunBox{width:75px;height:75px; position: absolute;border-radius: 50%;box-shadow: 2px 2px 80px #e2db8c;}
+.sunBox0{ bottom:2%;right: 5%;}
+.sunBox img{width:100%}
+.sunBox1{bottom: 7%;right: 10%;}
+.sunBox2{top: 6%;right: 10%;}
+/*太阳光*/
+.light{width: 75px;height: 75px;border-radius: 50%;box-shadow: 2px 2px 80px #eb7b42;position: absolute;animation: light 4s linear infinite alternate;}
+@-webkit-keyframes light {
+    0%, 50%, 100% {opacity: 1;transform: rotate(0deg);}
+    25%, 75% {opacity: 0;transform: rotate(360deg);}
+}
+/* 植物 */
+.plant{position: absolute;left: 0;}
+.plant0{top: 0;}
+.plant1{bottom: -4px;}
+.plant img{width: 50%;}
+.plant1 img{width:55%;}
+.plant2 img{width: 55%;}
+.plant3{top:19%;left: 5%}
+.plant3 img{width: 60%;}
+.treeBox2{position: absolute;top: 0;left:0;width: 100%;height: 100%;}
+.treeBox2 div{position: absolute;top:0;left: 0;height: 100%;width: 100%;}
+.treeBox2 img{width:50%;height: 100%;}
+.plant6 img{width: 57%;}
+.plant7 img{width: 60%;}
+.plant8{width: 100%;}
+.plant8 img:nth-child(2){position: absolute;z-index: 10;}
+.plantBox{position: absolute;left: 0;top: 0;pointer-events: none;z-index: 100;opacity: 1;animation-fill-mode: forwards;}
+.plantBox img{width: 100%;height: 100%;}
+.plantBox0{width: 250px;height: 100%;background: url(../images/plant0_0.png)no-repeat;background-size: 100% 100%;}
+.plant0{animation: plant0 7s linear infinite;-webkit-animation: plant0 7s linear infinite;}
+@-webkit-keyframes plant0{
+	0%{background: url(../images/plant0_0.png)no-repeat;background-size: 100% 100%;}
+	10%{background: url(../images/plant0_0.png)no-repeat;background-size: 100% 100%;}
+	40%{background: url(../images/plant0_1.png)no-repeat;background-size: 100% 100%;}
+	60%{background: url(../images/plant0_1.png)no-repeat;background-size: 100% 100%;}
+	90%{background: url(../images/plant0_0.png)no-repeat;background-size: 100% 100%;}
+	100%{background: url(../images/plant0_0.png)no-repeat;background-size: 100% 100%;}
+}
+.plantBox1{width: 200px;height: 25%;background: url(../images/plant1_0.png)no-repeat;background-size: 100% 100%;}
+.plant1{animation: plant1 7s linear infinite;-webkit-animation: plant1 7s linear infinite;}
+@-webkit-keyframes plant1{
+	0%{background: url(../images/plant1_0.png)no-repeat;background-size: 100% 100%;}
+	10%{background: url(../images/plant1_0.png)no-repeat;background-size: 100% 100%;}
+	40%{background: url(../images/plant1_1.png)no-repeat;background-size: 100% 100%;}
+	60%{background: url(../images/plant1_1.png)no-repeat;background-size: 100% 100%;}
+	90%{background: url(../images/plant1_0.png)no-repeat;background-size: 100% 100%;}
+	100%{background: url(../images/plant1_0.png)no-repeat;background-size: 100% 100%;}
+}
+.plantBox2{width: 135px;height: 100%;background: url(../images/plant2_0.png)no-repeat;background-size: 100% 100%;}
+.plant2{animation: plant2 7s linear infinite;-webkit-animation: plant2 7s linear infinite;}
+@-webkit-keyframes plant2{
+	0%{background: url(../images/plant2_0.png)no-repeat;background-size: 100% 100%;}
+	10%{background: url(../images/plant2_0.png)no-repeat;background-size: 100% 100%;}
+	40%{background: url(../images/plant2_1.png)no-repeat;background-size: 100% 100%;}
+	60%{background: url(../images/plant2_1.png)no-repeat;background-size: 100% 100%;}
+	90%{background: url(../images/plant2_0.png)no-repeat;background-size: 100% 100%;}
+	100%{background: url(../images/plant2_0.png)no-repeat;background-size: 100% 100%;}
+}
+.plantBox3{width: 180px;height: 40%;background: url(../images/plant3_0.png)no-repeat;background-size: 100% 100%;}
+.plant3{animation: plant3 7s linear infinite;-webkit-animation: plant3 7s linear infinite;}
+@-webkit-keyframes plant3{
+	0%{background: url(../images/plant3_0.png)no-repeat;background-size: 100% 100%;}
+	10%{background: url(../images/plant3_0.png)no-repeat;background-size: 100% 100%;}
+	40%{background: url(../images/plant3_1.png)no-repeat;background-size: 100% 100%;}
+	60%{background: url(../images/plant3_1.png)no-repeat;background-size: 100% 100%;}
+	90%{background: url(../images/plant3_0.png)no-repeat;background-size: 100% 100%;}
+	100%{background: url(../images/plant3_0.png)no-repeat;background-size: 100% 100%;}
+}
+.plantBox4{width:300px;height:100%;background: url(../images/plant4_0.png)no-repeat;background-size: 100% 100%;}
+.plant4{animation: plant4 7s linear infinite;-webkit-animation: plant4 7s linear infinite;}
+@-webkit-keyframes plant4{
+	0%{background: url(../images/plant4_0.png)no-repeat;background-size: 100% 100%;}
+	10%{background: url(../images/plant4_0.png)no-repeat;background-size: 100% 100%;}
+	40%{background: url(../images/plant4_1.png)no-repeat;background-size: 100% 100%;}
+	60%{background: url(../images/plant4_1.png)no-repeat;background-size: 100% 100%;}
+	90%{background: url(../images/plant4_0.png)no-repeat;background-size: 100% 100%;}
+	100%{background: url(../images/plant4_0.png)no-repeat;background-size: 100% 100%;}
+}
+.plantBox5{width: 180px;height:100%;background: url(../images/plant5_0.png)no-repeat;background-size: 100% 100%;}
+.plant5{animation: plant5 7s linear infinite;-webkit-animation: plant5 7s linear infinite;}
+@-webkit-keyframes plant5{
+	0%{background: url(../images/plant5_0.png)no-repeat;background-size: 100% 100%;}
+	10%{background: url(../images/plant5_0.png)no-repeat;background-size: 100% 100%;}
+	40%{background: url(../images/plant5_1.png)no-repeat;background-size: 100% 100%;}
+	60%{background: url(../images/plant5_1.png)no-repeat;background-size: 100% 100%;}
+	90%{background: url(../images/plant5_0.png)no-repeat;background-size: 100% 100%;}
+	100%{background: url(../images/plant5_0.png)no-repeat;background-size: 100% 100%;}
+}
+.plantBox6{width: 170px;height:100%;background: url(../images/plant6_0.png)no-repeat;background-size: 100% 100%;}
+.plant6{animation: plant6 7s linear infinite;-webkit-animation: plant6 7s linear infinite;}
+@-webkit-keyframes plant6{
+	0%{background: url(../images/plant6_0.png)no-repeat;background-size: 100% 100%;}
+	10%{background: url(../images/plant6_0.png)no-repeat;background-size: 100% 100%;}
+	40%{background: url(../images/plant6_1.png)no-repeat;background-size: 100% 100%;}
+	60%{background: url(../images/plant6_1.png)no-repeat;background-size: 100% 100%;}
+	90%{background: url(../images/plant6_0.png)no-repeat;background-size: 100% 100%;}
+	100%{background: url(../images/plant6_0.png)no-repeat;background-size: 100% 100%;}
+}
+/*烟雾*/
+.smokeBox{width: 158px;position: absolute;top: 287px;right: 30px;height: 100px;background: url(../images/smoke0.png)no-repeat;background-size: contain;animation: smoke 7s linear infinite alternate;}
+@-webkit-keyframes smoke{
+	0%{background: url(../images/smoke0.png)no-repeat;background-size:contain;}
+	10%{background: url(../images/smoke0.png)no-repeat;background-size: contain;}
+	40%{background: url(../images/smoke1.png)no-repeat;background-size:contain;}
+	60%{background: url(../images/smoke1.png)no-repeat;background-size:contain;}
+	90%{background: url(../images/smoke0.png)no-repeat;background-size:contain;}
+	100%{background: url(../images/smoke0.png)no-repeat;background-size:contain;}
+}
+/* 场景6 鸟*/
+.animalBox7{
+	width: 175px;
+	height:125px;
+	background: url(../images/bird2.png)no-repeat;
+	background-size:contain;
+	left: 75px;
+	top: 35px;
+	z-index: 101;
+	animation: birds6 5s linear infinite;
+}
+@-webkit-keyframes birds6{
+	0%{background: url(../images/bird2.png)no-repeat;background-size:contain;}
+	10%{background: url(../images/bird2.png)no-repeat;background-size: contain;}
+	40%{background: url(../images/bird3.png)no-repeat;background-size:contain;}
+	60%{background: url(../images/bird3.png)no-repeat;background-size:contain;}
+	90%{background: url(../images/bird2.png)no-repeat;background-size:contain;}
+	100%{background: url(../images/bird2.png)no-repeat;background-size:contain;}
+}
+/* .animalBox8{
+	width: 115px;
+	height:90px;
+	left: auto;
+	right: 14%;
+	top: 236px;
+	background: url(../images/bird5.png)no-repeat;
+	background-size:contain;
+	animation: birds7 8s linear infinite;
+}
+@-webkit-keyframes birds7{
+	0%{background: url(../images/bird5.png)no-repeat;background-size:contain;}
+	60%{background: url(../images/bird4.png?v=1)no-repeat;background-size:contain;}
+	100%{background: url(../images/bird5.png)no-repeat;background-size:contain;}
+} */
+/* 树林 */
+.tree1{z-index: 50;}
+.tree2{z-index: 40;}
+.tree3{z-index: 30;}
+.tree4{z-index: 20;}
+.treeA1{animation: dis1 1s linear 1;animation-fill-mode: forwards;}
+.treeA2{animation: dis1 1s 1s linear 1;animation-fill-mode: forwards;}
+.treeA3{animation: dis1 1s 2s linear 1;animation-fill-mode: forwards;}
+.tree5{position: absolute; left: 5px;top: 129px;transform: scale(.8);}
+/* 动物 */
+.animalBox{position: absolute;}
+.animalBox0{top:25%;left: 0;}
+.animalBox0 img{width:50%;}
+.animalBox1{right:25%;bottom:22%;}
+.animalBox1 img{width: 90%;}
+.animalBox3{top:74%;width: 197px; height: 54px;}
+.animalBox3 img{width: 70%}
+.animalBox3 img:nth-child(1){width: 10%;position: absolute;left: 55px;top: -67px;}
+.animalBox3 img:nth-child(2){position: absolute;}
+.animalBox4{top:10%;right:9%;}
+.animalBox4 img{width: 100%;}
+.animalBox5,.animalBox6{right: 23%;bottom:35%;}
+.animalBox5 img,.animalBox6 img{width: 100%;}
+.animalBox8{left: 56%;top: 42%;}
+.animalBox8 img{width:25%;}
+/* 雪花 */
+.snowBox{width: 100%;}
+.snowBox img{width: 100%;}
+/* 台阶 */
+.stoneBox{width: 50%;position: relative;display: flex;height: 250px; margin: -99% 0;text-align: center;}
+.stoneBox div{position: absolute;opacity: 0;}
+.stone1{width: 16px;left: 0;top: 36px;animation: dis2 1s linear 1;animation-fill-mode: forwards;}
+.stone2{width: 10%; left: 20px;top: 20px;animation: dis2 1s 1s linear 1;animation-fill-mode: forwards;}
+.stone3{width: 8%;left: 43px;top: 17px;animation: dis2 1s 2s linear 1;animation-fill-mode: forwards;}
+.stone4{width: 6%;left: 62px;top: 37px;animation: dis2 1s 3s linear 1;animation-fill-mode: forwards;}
+.stone5{width: 4.5%;left: 76px;top: 64px;animation: dis2 1s 4s linear 1;animation-fill-mode: forwards;}
+.stone6{width: 3%;left: 85px;top: 78px;animation: dis2 1s 5s linear 1;animation-fill-mode: forwards;}
+.stone7{width: 3%;left: 94px;top: 84px;animation: dis2 1s 6s linear 1;animation-fill-mode: forwards;}
+.stoneBox div img{width: 100%}
+
+/*鸟*/
+.birdBox{right: 15%; bottom: 13%;transform: scale(.65);}
+.bird{width: 152px;height: 160px;/* transform-style: preserve-3d; */}
+.leftWing{width: 95px;height: 70px;background: url(../images/wing0_0.png) no-repeat;background-size: contain;position: absolute;top:55px;left:80px;z-index: 9999;}
+.birdBody{width: 152px;height: 160px;background: url(../images/bird0.png) no-repeat;position: absolute;margin: auto;left: 35px;right: 0;bottom: 0px;top: 0;z-index: 10000;}
+.rightWing{width: 50px;height: 85px;background: url(../images/wing0_1.png) no-repeat;background-size: contain;position: absolute;right: 75px;top: 97px;z-index: 9999;}
+.birdBox1{right: 0;top: 0;bottom: auto;transform: scale(.6);}
+.birdBox2{right: 68px;bottom: 169px;transform: scale(.6);}
+.birdBody1{background: url(../images/bird1.png) no-repeat;}
+.leftWing1{background: url(../images/wing1_0.png) no-repeat;left:61px;top: 67px;}
+.rightWing1{background: url(../images/wing1_1.png) no-repeat;width: 76px;right: 88px;top: 88px;}
+.birdBox3{right: 28px;top: 20px;bottom: auto;transform: scale(.6);}
+.birdBox4{right: 62px;bottom: 197px;}
+/*翅膀动画*/
+.anim1{ animation: left 1s linear infinite alternate;}
+.anim2{animation: right 1s linear infinite alternate;}
+@keyframes left {
+    0%{transform: rotateY(60deg);transform-origin: left center;perspective: 201px;}
+    50%{transform: rotateY(30deg);transform-origin: left center;perspective: 201px;}
+    100%{transform: rotateY(0deg);transform-origin: left center;perspective: 201px;}
+}
+@keyframes right {
+    0%{transform: rotateY(60deg);transform-origin: right center;perspective: 201px;}
+    50%{transform: rotateY(30deg);transform-origin: right center;perspective: 201px;}
+    100%{transform: rotateY(0deg);transform-origin: right center;perspective: 201px;}
+}
+/*鸟晃动动画*/
+.anim5{animation: anim5 2s linear infinite alternate;}
+@-webkit-keyframes anim5 {
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+        transform-origin: center center;
+    }
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1,0deg);
+        transform-origin: center center;
+    }
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+        transform-origin: center center;
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg);
+        transform-origin: center center;
+    }
+    100% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+        transform-origin:center center;
+    }
+}
+/*猴子动画*/
+.anim3{animation: anim3 2s linear infinite alternate;}
+@keyframes anim3 {
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+        transform-origin: bottom center;
+    }
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1,0deg);
+        transform-origin: bottom center;
+    }
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg);
+        transform-origin: bottom center;
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg);
+        transform-origin: bottom center;
+    }
+    100% {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+        transform-origin: bottom center;
+    }
+}
+/* 树林消失 */
+@-webkit-keyframes dis1{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+/* 台阶出现*/
+@-webkit-keyframes dis2{
+    from{opacity:0;}
+    to{opacity: 1;}
+}
+/*树叶飘落动画*/
+@-webkit-keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes drop {
+    0% {
+        -webkit-transform: translate(0px, -50px);
+    }
+    100% {
+        -webkit-transform: translate(0px, 650px);
+    }
+}
+@-webkit-keyframes clockwiseSpin {
+    0% {
+        -webkit-transform: rotate(-50deg);
+    }
+    100% {
+        -webkit-transform: rotate(50deg);
+    }
+}
+@-webkit-keyframes counterclockwiseSpinAndFlip {
+    0% {
+        -webkit-transform: scale(-1, 1) rotate(50deg);
+    }
+    100% {
+        -webkit-transform: scale(-1, 1) rotate(-50deg);
+    }
+}
+.leave{width: 375px;height: 400px;transform: rotate(90deg);position: absolute;top: 0px;left: 0;z-index: 1000;}
+.leave > div {position: absolute;width: 200px;height: 200px;-webkit-animation-iteration-count: infinite, infinite;-webkit-animation-direction: normal, normal;-webkit-animation-timing-function: linear, ease-in;}
+.leave > div > img {position: absolute;width:200px;height: 200px;-webkit-animation-iteration-count: infinite;-webkit-animation-direction: alternate;-webkit-animation-timing-function: ease-in-out;-webkit-transform-origin: 50% -50%;}
+.leave2{top:108px;}
+.arr {
+    width: 66px;
+    height: 60px;
+    position: absolute;
+    z-index: 111;
+    left: 50%;
+    bottom: 4%;
+    margin-left: -46.5px;
+    background: url(../images/arrow.png) no-repeat;
+    background-size: contain;
+    -webkit-animation: fadeInUp2 1s ease-in-out infinite alternate;
+    animation: fadeInUp2 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes fadeInUp2 {
+    from {
+        -webkit-transform:translate(0,0)
+    }
+    to {
+        -webkit-transform:translate(0,20%)
+    }
+}
+@keyframes fadeInUp2 {
+    from {
+        -webkit-transform:translate(0,0)
+    }
+    to {
+        -webkit-transform:translate(0,20%)
+    }
+}
+/*iphone6P/7P*/
+@media only screen and (min-width:411px ) and (max-width:414px) {
+	/* .animalBox8{top: 271px;right: 17%;} */
+}
+/*iphoneX*/
+@media only screen and (min-height:724px ) {
+	.animalBox7{top:52px;}
+	.animalBox8{top: 43%;}
+}

@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css?v=3.7" />
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/index.js?v=1.3"></script>
+    <title>正源尚峰尚水《一只鸟的视界观》</title>
+</head>
+<script>
+//页面打开 音乐自动播放
+document.addEventListener('DOMContentLoaded', function() {
+	function audioAutoPlay() {
+		var music = document.getElementById("sound1");
+		var music2 = document.getElementById("sound2");
+		music.play();
+		document.addEventListener("WeixinJSBridgeReady", function() {
+			music.play();
+			music2.play();
+			setTimeout(function(){
+				sound2.pause();
+			},10)
+		}, false);
+	}
+	audioAutoPlay();
+});
+</script>
+<body>
+	<!-- 音乐 -->
+	<audio src="sound/s1.mp3" id="sound1" autoplay preload loop="loop"></audio>
+	<audio src="sound/s2.mp3" id="sound2" loop="loop" autoplay preload></audio>
+	<!--加载-->
+	<div class="preload ">
+		<div class="roundBox">
+			<img src="images/round0.png" class="round0"/>
+			<img src="images/round1.png" class="round1">
+			<div class="round3">
+				<p class="texts"><img src="images/text.png?v=1"/></p>
+				<p class="pre_num">100%</p>
+			</div>
+		</div>
+	</div>
+    <!--滑动-->
+    <div class="swiper-container" style="display: none;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg1 " data-page="1">
+                <!-- 字 -->
+                <div class="textBox textBox0">
+                    <img src="images/p0_1.png">
+                    <img src="images/p0_2.png">
+                    <img src="images/p0_3.png">
+                </div>
+                <!-- 云 -->
+                <div class="cloudBox">
+                    <div class="cloud cloud0"><img src="images/cloud0.png" ></div>
+                    <div class="cloud cloud1"><img src="images/cloud1.png"></div>
+                </div>
+                <!-- 太阳 -->
+                <div class="sunBox sunBox0">
+                    <img src="images/sun0.png"/>
+                </div>
+                <!--植物 仙人掌 -->
+                <div class="plantBox plantBox0 plant0"></div>
+                <!--动物 骆驼 -->
+                <div class="animalBox animalBox0">
+                   <img src="images/animal0.png" class="anim9">
+                </div>
+                <!--动物 鸟 -->
+                <div class="animalBox animalBox1 birdBox">
+					<div class="bird">
+						<div class="leftWing anim1"></div>
+						<div class="birdBody"></div>
+						<div class="rightWing anim2"></div>
+					</div>
+                </div>
+				<!-- 箭头 -->
+				<p class="arr"></p>
+			</div>
+            <div class="swiper-slide bg2 " data-page="2">
+                <!-- 字 -->
+                <div class="textBox textBox1">
+                    <img src="images/p1_1.png">
+                    <img src="images/p1_2.png">
+                    <img src="images/p1_3.png">
+                </div>
+                <!-- 雪花 -->
+				<div id="leafSnow"  class="leave leave1"></div>
+                <!--<div class="snowBox">
+                  <img src="images/snow.png">
+                </div>-->
+                <!--植物 树枝 -->
+                <div class="plantBox plantBox1 plant1"></div>
+				<!-- 树枝 -->
+				<img src="images/img3.png" class="tree5" />
+                <!--动物 猴子 -->
+                <div class="animalBox animalBox3">
+                    <img src="images/animal1_1.png" class="anim3">
+                    <img src="images/animal1.png">
+                </div>
+                <!--动物 鸟 -->
+                <div class="animalBox birdBox birdBox1">
+                	<div class="bird">
+                		<div class="leftWing anim1"></div>
+                		<div class="birdBody"></div>
+                		<div class="rightWing anim2"></div>
+                	</div>
+                </div>
+				<!-- 箭头 -->
+				<p class="arr"></p>
+            </div>
+            <div class="swiper-slide bg3 " data-page="3">
+                <!-- 字 -->
+                <div class="textBox textBox2">
+                    <img src="images/p2_1.png">
+                    <img src="images/p2_2.png">
+                    <img src="images/p2_3.png">
+                </div>
+                <!-- 云 -->
+                <div class="cloudBox">
+                    <div class="cloud cloud0 cloud0_3"><img src="images/cloud0.png"></div>
+                    <div class="cloud cloud1 cloud0_3"><img src="images/cloud1.png"></div>
+                </div>
+                <!-- 太阳 -->
+                <div class="sunBox sunBox1">
+                    <img src="images/sun0.png"/>
+                </div>
+                <!--植物 树 -->
+                <div class="plantBox plantBox2  plant2"></div>
+				<div class="treeBox2">
+					<div class="tree2 "><img src="images/tree1.png"></div>
+					<div class="tree3"><img src="images/tree2.png"></div>
+					<div class="tree4"><img src="images/tree3.png"></div>
+				</div>
+                <!--动物 鸟 -->
+                <div class="animalBox birdBox birdBox2">
+                	<div class="bird">
+                		<div class="leftWing anim1"></div>
+                		<div class="birdBody"></div>
+                		<div class="rightWing anim2"></div>
+                	</div>
+                </div>
+				<!-- 箭头 -->
+				<p class="arr"></p>
+            </div>
+            <div class="swiper-slide bg4 " data-page="4">
+                <!-- 字 -->
+                <div class="textBox textBox3">
+                    <img src="images/p3_1.png">
+                    <img src="images/p3_2.png">
+                    <img src="images/p3_3.png">
+					<img src="images/p3_4.png">
+                </div>
+                <!-- 云 -->
+                <div class="cloudBox">
+                    <div class="cloud cloud0 cloud0_4"><img src="images/cloud0.png"></div>
+                    <div class="cloud cloud1 cloud0_5"><img src="images/cloud1.png"></div>
+                </div>
+                <!--植物 仙人掌 -->
+                <div class="plantBox plantBox3 plant3"></div>
+                <!-- 树叶 -->
+                <div id="leafTree2" class="leave leave2" ></div>
+                <!--动物 鸟 -->
+				<div class="animalBox birdBox birdBox2 birdBox4">
+					<div class="bird">
+						<div class="leftWing leftWing1 anim1"></div>
+						<div class="birdBody birdBody1"></div>
+						<div class="rightWing rightWing1 anim2"></div>
+					</div>
+				</div>
+				<!-- 箭头 -->
+				<p class="arr"></p>
+            </div>
+            <div class="swiper-slide bg5 " data-page="5">
+                <!-- 字 -->
+                <div class="textBox textBox4">
+                    <img src="images/p4_1.png">
+                    <img src="images/p4_2.png">
+                    <img src="images/p4_3.png">
+                </div>
+                <!-- 云 -->
+                <div class="cloudBox">
+                    <div class="cloud cloud0 cloud0_5"><img src="images/cloud0.png"></div>
+                    <div class="cloud cloud1"><img src="images/cloud1.png"></div>
+                </div>
+                <!--植物 仙人掌 -->
+                <div class="plantBox plantBox4  plant4"></div>
+				<!-- 烟 -->
+				<div class="smokeBox"></div>
+                <!-- 台阶 -->
+                <div class="stoneBox">
+                    <div><img src="images/stone1.png"></div>
+                    <div><img src="images/stone2.png"></div>
+                    <div><img src="images/stone3.png"></div>
+                    <div><img src="images/stone4.png"></div>
+                    <div><img src="images/stone5.png"></div>
+                    <div><img src="images/stone6.png"></div>
+                    <div><img src="images/stone7.png"></div>
+                </div>
+                <!--动物 鸟 -->
+                <div class="animalBox birdBox birdBox3">
+                	<div class="bird">
+                		<div class="leftWing anim1"></div>
+                		<div class="birdBody"></div>
+                		<div class="rightWing anim2"></div>
+                	</div>
+                </div>
+				<!-- 箭头 -->
+				<p class="arr"></p>
+            </div>
+            <div class="swiper-slide bg6 " data-page="6">
+                <!-- 字 -->
+                <div class="textBox textBox1 textBox5">
+                     <img src="images/p5_1.png">
+                    <img src="images/p5_2.png">
+                </div>
+                <!-- 云 -->
+                <div class="cloudBox cloudBox6">
+                    <div class="cloud cloud0 cloud0_6"><img src="images/cloud0.png"></div>
+                    <div class="cloud cloud1 cloud1_6"><img src="images/cloud1.png"></div>
+                </div>
+                <!-- 太阳 -->
+                <div class="sunBox sunBox2">
+                    <img src="images/sun0.png"/>
+                </div>
+                <!--植物 花 -->
+                <div class="plantBox plantBox5  plant5"></div>
+                <!--动物 鸟 -->
+                <div class="animalBox animalBox7">
+                </div>
+				<!-- 箭头 -->
+				<p class="arr"></p>
+            </div>
+            <div class="swiper-slide bg7 " data-page="7">
+				<!-- logo-->
+				<div class="logo logo1">
+					<img src="images/logo1.png" />
+				</div>
+                <!-- 字 -->
+                <div class="textBox textBox6">
+                    <img src="images/p6_1.png">
+                    <img src="images/p6_2.png">
+                </div>
+                <!-- 云 -->
+                <div class="cloudBox cloudBox7">
+                    <div class="cloud cloud0 cloud0_7"><img src="images/cloud0.png"></div>
+                    <div class="cloud cloud1 cloud1_7"><img src="images/cloud1.png"></div>
+                </div>
+                <!--植物 仙人掌 -->
+                <div class="plantBox plantBox6  plant6"></div>
+                <!--动物 鸟 -->
+              <!--  <div class="animalBox animalBox8">
+					<img src="images/bird2.png"/>
+				</div> -->
+            </div>
+        </div>
+    </div>
+
+<script>
+	// 树叶飘动
+	const NUMBER_OF_LEAVES = 1;
+	function init(pages,imgName,idName){
+		
+		var container = document.getElementById(idName);
+	    for (var i = 0; i < NUMBER_OF_LEAVES; i++) {
+	        container.appendChild(createALeaf(imgName));
+	    }
+	}
+	function randomInteger(low, high){return low + Math.floor(Math.random() * (high - low));}
+	function randomFloat(low, high){return low + Math.random() * (high - low);}
+	function pixelValue(value){return value + 'px';}
+	function durationValue(value){return value + 's';}
+	function createALeaf(imgName){
+	    var leafDiv = document.createElement('div');
+	    var image = document.createElement('img');
+//	    image.src = 'images/tree' + randomInteger(0, 2) + '.png';
+	    image.src = 'images/'+imgName+'.png';
+	    leafDiv.style.top = "80px";
+	    leafDiv.style.right = pixelValue(randomInteger(0, 50));
+	    var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
+	    leafDiv.style.webkitAnimationName = 'fade, drop';
+	    image.style.webkitAnimationName = spinAnimationName;
+	    var fadeAndDropDuration = durationValue(randomFloat(5, 8));
+	    var spinDuration = durationValue(randomFloat(4, 8));
+	    leafDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+	    var leafDelay = durationValue(randomFloat(0, 5));
+	    leafDiv.style.webkitAnimationDelay = leafDelay + ', ' + leafDelay;
+	    image.style.webkitAnimationDuration = spinDuration;
+	    leafDiv.appendChild(image);
+	    return leafDiv;
+	}
+	window.addEventListener('load', init, false);
+</script>
+</body>
+</html>
