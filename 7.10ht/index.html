@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="format-detection"  content="telephone=no">
+		<meta  http-equiv="x-rim-auto-match" content="none">
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" href="css/index.css?v=2.2" />
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/loading.js?v=1"></script>
+		<script src="js/swiper.min.js"></script>
+		<title>涵田半岛邀请函</title>
+	</head>
+	<script>
+        //页面打开 音乐自动播放
+        document.addEventListener('DOMContentLoaded', function() {
+            function audioAutoPlay() {
+                var music = document.getElementById("sound");
+                music.play();
+                document.addEventListener("WeixinJSBridgeReady", function() {
+                    music.play();
+                })
+            }
+            audioAutoPlay();
+        })
+	</script>
+	<body>
+		<!--加载-->
+		<div class="preload">
+			<p class="texts"><img src="img/logo.png"/></p>
+			<p class="pre_num">100%</p>
+		</div>
+		<!-- 音乐 -->
+		<audio src="music/music.mp3?v=1" autoplay id="sound" preload loop="loop"></audio>
+		<!-- 音乐按钮 -->
+		<div class="musicBtn round"><img src="img/music.png"/></div>
+		<div class="swiper-container imgBox" style="display:none;">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-page="1">
+					<div class="logoBox"><img src="img/logo.png" /></div>
+					<div class="content content_1">
+						<img src="img/p1_1.png" class="anim1"/>
+						<img src="img/p1_0.png?=1" />
+						<img src="img/bird.png"/ class="bird anim2">
+					</div>
+				</div>
+				<div class="swiper-slide" data-page="2">
+					<div class="content content_2">
+						<img src="img/p2.png" />
+					</div>
+				</div>
+				<div class="swiper-slide" data-page="3">
+					<div class="content content_3">
+						<img src="img/p3_0.png" />
+						<img src="img/p3_1.png"/>
+						<img src="img/p3_2.png"/>
+					</div>
+				</div>
+				<div class="swiper-slide" data-page="4">
+					<div class="content content_4">
+						<img src="img/p4_0.png" />
+						<img src="img/p4_1.png" class=" del1"/>
+						<img src="img/p4_2.png" class=" del2"/>
+					</div>
+				</div>
+				<div class="swiper-slide" data-page="5">
+					<div class="content content_5">
+						<img src="img/p5_1.png"/>
+					</div>
+				</div>
+				<div class="swiper-slide" data-page="6">
+					<div class="content content_6">
+						<img src="img/p6_1.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var music = document.getElementById("sound");
+			var flag = 1;
+			var myPage = 1;
+			$(function(){
+				// 轮播
+				var mySwiper = new Swiper ('.swiper-container', {
+					direction: 'vertical', // 垂直切换选项
+					observer:true,//修改swiper自己或子元素时，自动初始化swiper
+					observeParents:true,//修改swiper的父元素时，自动初始化swiper
+				})
+				//获取当前显示的页
+				mySwiper.on('slideChangeTransitionEnd', function () {
+					myPage= $('.swiper-slide-active').data("page");
+					if(myPage == 2){
+						$(".content_2 img:nth-child(1)").addClass("anim3");
+					}else if(myPage == 3){
+						$(".content_3 img:nth-child(3)").addClass("anim3");
+					}else if(myPage == 4){
+						$(".content_4 img").addClass("anim4");
+					}else if(myPage == 5){
+						$(".content_5 img").addClass("anim5");
+					}else if(myPage == 6){
+						$(".content_6 img").addClass("anim5");
+					}
+				});
+				//音乐暂停
+				$(".musicBtn").click(function(){
+					if(flag){
+						music.pause();
+						flag = 0;
+						$(".musicBtn").removeClass("round");
+					}else{
+						music.play();
+						flag = 1;
+						$(".musicBtn").addClass("round");
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
