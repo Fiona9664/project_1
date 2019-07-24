@@ -1,0 +1,102 @@
+@charset "utf-8";
+*{-webkit-overflow-scrolling:touch;margin: 0;padding: 0;-webkit-tap-highlight-color: transparent;list-style: none;box-sizing: border-box;outline: none;text-decoration: none; -webkit-appearance: none;}
+html, body{width: 100%;height: 100%;background:#600200 url(../img/bg_1.jpg)no-repeat;background-size: 100% 100%;font-size: 16px;}
+input,textarea,button,select{cursor: pointer; border: none;background: none;outline: none;-webkit-appearance: none;resize: none;-webkit-user-select: text!important;user-select: text!important;font-size: .95em;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{font-size: .9em;color: #878787;}
+.pageBox{width: 100%;height: 100%;display: none;}
+/* 规则 */
+.ruleBox{position: fixed;top: 0;right:3%;text-align: right;}
+.ruleBox img{width: 25%;cursor: pointer;}
+/* 首页 pageBox_1*/
+.pageBox_1{display: block;}
+.logoBox{width:25%;pointer-events: none;padding: 5% ;}
+.logoBox img{width: 100%;}
+.titleBox{width:90%;transform: scale(.9);margin-top: -10%;}
+.titleBox img{width: 100%;}
+.contentBox{width: 100%;}
+.contentBox>img{width: 100%;pointer-events: none;}
+.ulBox{width:70%;overflow: auto; margin: 0 auto;display: flex;flex-wrap: wrap;justify-content: space-between;margin-top: -2%;}
+.ulBox li{width:48.5%;height:2.2rem;line-height: 2.2rem; text-align: center;font-size:1.1rem;font-weight: bold;color: #2c1916;}
+.ulBox_1 li{width:100%;background: url(../img/bg_8.png)no-repeat;background-size: 100% 100%;letter-spacing: 4px;}
+.ulBox_2 li{margin-bottom: 2%;background: url(../img/bg_2.png)no-repeat;background-size: 100% 100%;}
+.bottomBox{width:90%;position: fixed;bottom: 0.3125rem;left: 0;right: 0;display: flex;align-items: center;justify-content: space-between;margin: 0 auto;}
+.bottomBox img{cursor: pointer;}
+.gameBtn{width: 65%;}
+.myGift{width:15%;}
+/* 列表页 pageBox_2*/
+.pageBox_2{background: url(../img/bg_2.jpg)no-repeat;background-size:100%;}
+.topBox{width: 90%;margin: 0 auto;padding:3% 0;display: flex;justify-content: space-between;align-items: center;position: relative;}
+.topBox:after{content: '';width:87%;height: 1px;background: #fff;position: absolute;top: 50%;left:-1.375rem;}
+.sameArea{width:6.25rem;height:2.1rem;line-height: 2.1rem; text-align: center;font-size:1.1rem;font-weight: bold;color: #2c1916;position: relative;z-index: 10;}
+.areaName_1{background: url(../img/bg_1.png)no-repeat;background-size: 100% 100%;}
+.areaName_2{background: url(../img/bg_2.png)no-repeat;background-size: 100% 100%;}
+.listBox{width: 100%;height: 88%;overflow: auto;}
+.list{width: 100%;margin: 3% auto; background: #ffff;padding:2%;display: flex;justify-content: space-between;align-items: center;}
+.building_img{width:40%;pointer-events: none;}
+.building_img img{width: 100%;vertical-align: middle;}
+.infor{width: 55%;}
+.infor p{line-height: 1.7;}
+.building_name{color: #141414;font-size: 1.05rem;font-weight: bold;}
+.building_price{color: #777777;font-size: .8rem;}
+.building_preferential{color: #c72716;font-weight: bold;font-size: .95rem;}
+.building_preferential span{font-size: 1.25rem;}
+.btnBox{width: 100%;}
+.btnBox a{display: inline-block;width: 45%;height: 1.875rem;cursor: pointer;}
+.joinBtn{background: url(../img/btn_8.png)no-repeat;background-size: contain;}
+.telBtn{background: url(../img/btn_7.png)no-repeat;background-size: contain;}
+/* 抽奖 */
+.pageBox_3{background: url(../img/bg_2.jpg)no-repeat;background-size: 100% 100%;overflow: hidden;}
+.backBtn{width: 20%;height: 1.85rem;line-height:1.85rem;cursor: pointer;display: block;color: #fff;border: 1px solid #fff;border-radius: 5px;text-align: center;letter-spacing: 0.25rem;font-size: .9rem;}
+.backBtn img{width:25%;padding-right: 0.3125rem;}
+.backBtn_2{position: absolute;left: 5%;top: 2%;}
+.titleBox_1{width: 60%;pointer-events: none;margin: 0 auto;padding: 12% 0 0;}
+.titleBox_1 img{width:100%;}
+.points{width:85%;height: 2.5rem;background: url(../img/bg_5.png)no-repeat center center;background-size: 100% 100%;transform: scale(.95); margin: 0 auto;font-size: .9rem;color: #fff;text-align: center;line-height: 2.5rem;}
+/* 转盘 */
+.gameBox{width: 85%;transform: scale(.95); background: url(../img/bg_6.png) no-repeat center center;background-size: 100% 100%;height:300px;margin: 0 auto;position: relative;}
+.game{width:300px;height: 300px;margin:auto;position: absolute;left: 0;right: 0;top:25px;bottom: 0;}
+.game div{position: absolute;width: 63px;height:63px;line-height:63px;text-align: center;background-position: center center; background-repeat:no-repeat ;}
+.game div img{width: 100%;}
+.gift_0{left:5px;top: 0;background-image: url(../img/gift_0.png);background-size: 100% 100%;}
+.gift_1{left:82px;top: 0;background-image: url(../img/gift_1.png);background-size: 100% 100%;}
+.gift_2{left:157px;top: 0;background-image: url(../img/gift_0.png);background-size: 100% 100%;}
+.gift_3{left:233px;top: 0;background-image: url(../img/gift_2.png);background-size: 100% 100%;}
+.gift_4{left:233px;top:70px;background-image: url(../img/gift_0.png);background-size: 100% 100%;}
+.gift_5{left:233px;top:142px;background-image: url(../img/gift_4.png);background-size: 100% 100%;}
+.gift_6{left:233px;top: 215px;background-image: url(../img/gift_0.png);background-size: 100% 100%;}
+.gift_7{left:157px;top: 215px;background-image: url(../img/gift_2.png);background-size: 100% 100%;}
+.gift_8{left: 82px;top: 215px;background-image: url(../img/gift_0.png);background-size: 100% 100%;}
+.gift_9{left: 5px;top: 215px;background-image: url(../img/gift_1.png);background-size: 100% 100%;}
+.gift_10{left: 5px;top:142px;background-image: url(../img/gift_0.png);background-size: 100% 100%;}
+.gift_11{left: 5px;top:70px;background-image: url(../img/gift_3.png);background-size: 100% 100%;}
+.playBtn{width:155px;height: 155px;position: absolute;left: 0;right: 0;top: 0;bottom: 0;margin: auto;background: url(../img/btn_6.png)no-repeat 4px -8px;background-size: 100% 100%;cursor: pointer;}
+.active .mask{display: block;}
+.mask{width: 63px;height:63px;background-image: url(../img/bg_7.png);background-size: 100% 100%;position: absolute;left: 0;top: 0;display: none;}
+/* dialog */
+.dialogBox{width: 100%;height: 100%;background: rgba(0,0,0,.8);position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 1000;}
+.dialog{width:75%; margin: 25% auto 0;padding: 5% 0;color: #fff;display: none;}
+.texts{font-size: .9rem;color: #ec9086;text-align: center;    position: absolute; bottom: 5%; left: 0; right: 0;}
+.dialog h3{text-align: center;}
+.dialog{height:23rem;background: url(../img/dialogBg_1.png)no-repeat;background-size:100% 100% ;}
+.textBox{width: 80%;height:18.2rem;margin: 5% auto;line-height: 2;overflow: auto;font-size: .9rem;}
+.closeBtn{width: 8%;position: absolute;display: block;right: 12.5%;top: 9%;}
+.dialog_3,.dialog_5{height: 15rem;position: relative;}
+.giftBox div{border-bottom: 1.3px dotted #e95240;width: 80%;margin: 0 auto;}
+.giftBox div:last-of-type{border: none;}
+.gifts{text-align: center;font-size: .95rem;padding: 3% 0;letter-spacing: 0.125rem;}
+.cards{background: url(../img/bg_4.png)no-repeat;background-size: 100% 100%;width: 10rem!important;height: 3.5rem;margin: 5% auto 0 !important;position: relative;}
+.timeBox{background: #8d0f01;position: absolute;font-size: .9rem;line-height: 2;width: 100%;bottom: 0;padding: 3% 10%;color: #ec9086;}
+.moneyBox{position: absolute;right: 0.3125rem;line-height: 3.5rem;font-size: .85rem;}
+.money{font-size: 3rem;}
+/*iphone5*/
+/* @media only screen and (max-width:320px ) {
+	.btnBox{background-position-y: 5.8rem;transform: scale(.95);bottom: -1%;}
+} */
+/*iphone6/7plus*/
+/* @media only screen and (min-width:411px ) and (max-width:414px) {
+	.btnBox{background-position-y:7.4rem;}
+} */
+/*iphonex*/
+/* @media only screen and (min-height:704px ){
+	.btnBox{width: 95%;bottom: 5%;}
+} */
